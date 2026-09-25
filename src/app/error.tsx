@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ORDER_MSG, SITE, waLink } from "@/data/site";
-import { WhatsAppGlyph } from "./site/whatsapp-glyph";
+import { WhatsAppGlyph } from "@/components/site/whatsapp-glyph";
 
 export default function ErrorBoundary({ reset }: { error: Error; reset: () => void }) {
   return (
