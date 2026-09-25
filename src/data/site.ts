@@ -6,7 +6,7 @@ export const SITE = {
   name: "C4 Restaurant & Bar",
   legalName: "C4 Restaurant & Bar CC",
   tagline: "The braai corner of Swakopmund",
-  // ASSUMPTION: production URL, updated at deploy time for canonical + schema
+  // Production URL confirmed live at deploy (2026-09-25)
   url: "https://c4-restaurant-bar.vercel.app",
   // Owner-supplied contact facts
   phonePrimary: "083 783 7780",
