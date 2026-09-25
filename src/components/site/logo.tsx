@@ -8,7 +8,6 @@ const LOGO_RATIO = "1889 / 585"; // full lockup, width / height
 
 export function LogoKnockout({ className = "" }: { className?: string }) {
   return (
-    // eslint-disable-next-line @next/next/no-img-element
     <img
       src="/brand/logo-knockout.svg"
       alt="C4 Restaurant & Bar"
@@ -22,7 +21,6 @@ export function LogoKnockout({ className = "" }: { className?: string }) {
 
 export function LogoNavy({ className = "" }: { className?: string }) {
   return (
-    // eslint-disable-next-line @next/next/no-img-element
     <img
       src="/brand/logo-navy.svg"
       alt="C4 Restaurant & Bar"
@@ -36,7 +34,6 @@ export function LogoNavy({ className = "" }: { className?: string }) {
 
 export function IconNavy({ className = "" }: { className?: string }) {
   return (
-    // eslint-disable-next-line @next/next/no-img-element
     <img
       src="/brand/icon-navy.svg"
       alt="C4 Restaurant & Bar bowl mark"
@@ -50,7 +47,6 @@ export function IconNavy({ className = "" }: { className?: string }) {
 
 export function IconKnockout({ className = "" }: { className?: string }) {
   return (
-    // eslint-disable-next-line @next/next/no-img-element
     <img
       src="/brand/icon-knockout.svg"
       alt=""
