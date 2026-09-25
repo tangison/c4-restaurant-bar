@@ -9,9 +9,22 @@ const INTERVAL = 5200;
 
 export function Hero() {
   const [index, setIndex] = useState(0);
+  // Progressive hero: slide 1 paints immediately, later slides load just
+  // before their crossfade, keeping the initial transfer under budget.
+  const [stage, setStage] = useState(1);
+
+  useEffect(() => {
+    const t1 = setTimeout(() => setStage(2), 1600);
+    const t2 = setTimeout(() => setStage(3), 3400);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, []);
 
   const go = useCallback((i: number) => {
     setIndex(((i % HERO_SLIDES.length) + HERO_SLIDES.length) % HERO_SLIDES.length);
+    setStage(HERO_SLIDES.length); // manual navigation loads everything
   }, []);
 
   useEffect(() => {
@@ -76,18 +89,20 @@ export function Hero() {
           {HERO_SLIDES.map((slide, i) => (
             <div
               key={slide.src}
-              className={`hero-slide absolute inset-0 ${i === index ? "active" : ""}`}
+              className={`hero-slide absolute inset-0 ${i === index ? "active" : ""} ${i >= stage ? "bg-c4-navy-deep" : ""}`}
               aria-hidden={i !== index}
             >
-              <Image
-                src={slide.src}
-                alt={slide.alt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 55vw"
-                className="hero-slide-img object-cover"
-                priority={i === 0}
-                quality={82}
-              />
+              {i < stage && (
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  className="hero-slide-img object-cover"
+                  priority={i === 0}
+                  quality={75}
+                />
+              )}
             </div>
           ))}
           <div className="absolute bottom-4 right-4 z-10 flex gap-2">
