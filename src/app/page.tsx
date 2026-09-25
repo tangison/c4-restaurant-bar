@@ -1,0 +1,35 @@
+import { Nav } from "@/components/site/nav";
+import { Hero } from "@/components/site/hero";
+import { Story } from "@/components/site/story";
+import { MenuSection } from "@/components/site/menu-section";
+import { Bar } from "@/components/site/bar";
+import { Gallery } from "@/components/site/gallery";
+import { Faq } from "@/components/site/faq";
+import { Visit } from "@/components/site/visit";
+import { Footer } from "@/components/site/footer";
+import { WhatsAppFloat } from "@/components/site/whatsapp-float";
+
+export default function Home() {
+  return (
+    <>
+      <a
+        href="#menu"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-c4-navy focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+      >
+        Skip to the menu
+      </a>
+      <Nav />
+      <main>
+        <Hero />
+        <Story />
+        <MenuSection />
+        <Bar />
+        <Gallery />
+        <Faq />
+        <Visit />
+      </main>
+      <Footer />
+      <WhatsAppFloat />
+    </>
+  );
+}

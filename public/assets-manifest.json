@@ -1,0 +1,264 @@
+{
+  "generated": "2026-09-25",
+  "note": "Every shipping raster on the C4 site originates from the client-supplied package. No raster was invented; the OG card is composed from approved brand assets.",
+  "assets": [
+    {
+      "file": "/photos/hero-patio.webp",
+      "origin": "client package: Photos/Exteriors-Patio/c4-exterior-01.jpg",
+      "treatment": "resampled to 1200w, WebP q82",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/hero-braai.webp",
+      "origin": "client package: Photos/Food-Braai-Grill/c4-braai-01.jpg",
+      "treatment": "resampled to 1200w, WebP q82",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/hero-bar.webp",
+      "origin": "client package: Photos/Exteriors-Patio/c4-exterior-08.jpg",
+      "treatment": "resampled to 1200w, WebP q82",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/story-sign.webp",
+      "origin": "client package: Photos/Exteriors-Patio/c4-exterior-07.jpg",
+      "treatment": "resampled to 900w, WebP q80",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/story-patio.webp",
+      "origin": "client package: Photos/Exteriors-Patio/c4-exterior-03.jpg",
+      "treatment": "resampled to 900w, WebP q80",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/menu-starters.webp",
+      "origin": "client package: Photos/Food-Starters-Salads/c4-starter-03.jpg",
+      "treatment": "resampled to 900w, WebP q80",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/menu-braai.webp",
+      "origin": "client package: Photos/Food-Braai-Grill/c4-braai-06.jpg",
+      "treatment": "resampled to 900w, WebP q80",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/menu-mains.webp",
+      "origin": "client package: Photos/Food-Mains-Takeaway/c4-mains-07.jpg",
+      "treatment": "resampled to 900w, WebP q80",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/menu-takeaway.webp",
+      "origin": "client package: Photos/Food-Mains-Takeaway/c4-mains-03.jpg",
+      "treatment": "resampled to 900w, WebP q80",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/bar-venue.webp",
+      "origin": "client package: Photos/Exteriors-Patio/c4-exterior-06.jpg",
+      "treatment": "resampled to 900w, WebP q80",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-01.webp",
+      "origin": "client package: Photos/Food-Starters-Salads/c4-starter-01.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-02.webp",
+      "origin": "client package: Photos/Food-Starters-Salads/c4-starter-02.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-03.webp",
+      "origin": "client package: Photos/Food-Starters-Salads/c4-starter-04.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-04.webp",
+      "origin": "client package: Photos/Food-Starters-Salads/c4-starter-05.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-05.webp",
+      "origin": "client package: Photos/Food-Braai-Grill/c4-braai-02.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-06.webp",
+      "origin": "client package: Photos/Food-Braai-Grill/c4-braai-03.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-07.webp",
+      "origin": "client package: Photos/Food-Braai-Grill/c4-braai-04.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-08.webp",
+      "origin": "client package: Photos/Food-Braai-Grill/c4-braai-05.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-09.webp",
+      "origin": "client package: Photos/Food-Braai-Grill/c4-braai-07.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-10.webp",
+      "origin": "client package: Photos/Food-Mains-Takeaway/c4-mains-01.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-11.webp",
+      "origin": "client package: Photos/Food-Mains-Takeaway/c4-mains-02.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-12.webp",
+      "origin": "client package: Photos/Food-Mains-Takeaway/c4-mains-04.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-13.webp",
+      "origin": "client package: Photos/Food-Mains-Takeaway/c4-mains-05.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-14.webp",
+      "origin": "client package: Photos/Food-Mains-Takeaway/c4-mains-06.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-15.webp",
+      "origin": "client package: Photos/Food-Mains-Takeaway/c4-mains-08.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/photos/gal-16.webp",
+      "origin": "client package: Photos/Exteriors-Patio/c4-exterior-09.jpg",
+      "treatment": "resampled to 800w, WebP q78",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/icons3d/beer-mug.webp",
+      "origin": "client package: 3D-Icons/c4-icon-beer-mug.png",
+      "treatment": "resized to 220x234, WebP alpha q88",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/icons3d/flame-grill.webp",
+      "origin": "client package: 3D-Icons/c4-icon-flame-grill.png",
+      "treatment": "resized to 238x240, WebP alpha q88",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/icons3d/cloche-plate.webp",
+      "origin": "client package: 3D-Icons/c4-icon-cloche-plate.png",
+      "treatment": "resized to 240x212, WebP alpha q88",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/icons3d/cutlery.webp",
+      "origin": "client package: 3D-Icons/c4-icon-cutlery.png",
+      "treatment": "resized to 205x227, WebP alpha q88",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/icons3d/coffee-cup.webp",
+      "origin": "client package: 3D-Icons/c4-icon-coffee-cup.png",
+      "treatment": "resized to 240x201, WebP alpha q88",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/icons3d/umbrella.webp",
+      "origin": "client package: 3D-Icons/c4-icon-umbrella.png",
+      "treatment": "resized to 214x240, WebP alpha q88",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/icons3d/chef-hat.webp",
+      "origin": "client package: 3D-Icons/c4-icon-chef-hat.png",
+      "treatment": "resized to 240x236, WebP alpha q88",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/brand/logo-200.png",
+      "origin": "Brand-Kit/Logo-Light/c4-logo-200w.png",
+      "treatment": "copied unchanged (approved brand asset)",
+      "source": "C4-Complete-Package.zip via filebin (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/brand/logo-400.png",
+      "origin": "Brand-Kit/Logo-Light/c4-logo-400w.png",
+      "treatment": "copied unchanged (approved brand asset)",
+      "source": "C4-Complete-Package.zip via filebin (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/brand/logo-800.png",
+      "origin": "Brand-Kit/Logo-Light/c4-logo-800w.png",
+      "treatment": "copied unchanged (approved brand asset)",
+      "source": "C4-Complete-Package.zip via filebin (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/brand/logo-reversed.png",
+      "origin": "Brand-Kit/Logo-Dark/c4-logo-full-reversed-transparent.png",
+      "treatment": "copied unchanged (approved brand asset)",
+      "source": "C4-Complete-Package.zip via filebin (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/brand/icon-64.png",
+      "origin": "Brand-Kit/Icon-Only/c4-icon-64px.png",
+      "treatment": "copied unchanged (approved brand asset)",
+      "source": "C4-Complete-Package.zip via filebin (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/brand/icon-128.png",
+      "origin": "Brand-Kit/Icon-Only/c4-icon-128px.png",
+      "treatment": "copied unchanged (approved brand asset)",
+      "source": "C4-Complete-Package.zip via filebin (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/brand/icon-256.png",
+      "origin": "Brand-Kit/Icon-Only/c4-icon-256px.png",
+      "treatment": "copied unchanged (approved brand asset)",
+      "source": "C4-Complete-Package.zip via filebin (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/favicons/*, /favicon.ico",
+      "origin": "Brand-Kit/Favicons/*",
+      "treatment": "copied unchanged",
+      "source": "client package (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/og-c4.jpg",
+      "origin": "composed: navy #223A6C + Brand-Kit/Logo-Dark reversed logo",
+      "treatment": "1200x630 JPEG q85",
+      "source": "composed for social cards from approved assets"
+    },
+    {
+      "file": "/photos/hero-feast.webp",
+      "origin": "Photos/Food-Braai-Grill/c4-braai-03.jpg",
+      "treatment": "resampled to 1200w, WebP q82",
+      "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    }
+  ]
+}
