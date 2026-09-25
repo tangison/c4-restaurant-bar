@@ -80,7 +80,9 @@ export function Hero() {
                 sizes="100vw"
                 className="hero-slide-img object-cover"
                 priority={i === 0}
-                quality={82}
+                // Slide 1 is the LCP image and keeps high quality; slides 2-3
+                // arrive mid-crossfade, so a lighter encode reads the same.
+                quality={i === 0 ? 82 : 75}
               />
             )}
           </div>
