@@ -162,7 +162,7 @@ export function OrderDock() {
         onClick={() => setOpen(true)}
         aria-haspopup="dialog"
         aria-expanded={open}
-        className={`fixed bottom-5 right-5 z-50 inline-flex items-center gap-2.5 rounded-full bg-c4-wa py-3.5 pl-4 pr-5 text-sm font-semibold text-white shadow-[0_14px_34px_-12px_rgba(2,26,64,0.6)] transition-[background-color,transform,opacity] duration-300 hover:bg-c4-wa-deep ${
+        className={`fixed bottom-5 right-5 z-50 inline-flex items-center gap-2.5 bg-c4-wa py-3.5 pl-4 pr-5 text-sm font-semibold text-white shadow-[0_14px_34px_-12px_rgba(2,26,64,0.6)] transition-[background-color,transform,opacity] duration-300 hover:bg-c4-wa-deep ${
           shown ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
         }`}
       >
@@ -173,7 +173,7 @@ export function OrderDock() {
         {DOCK.fab}
         {count > 0 && (
           <span
-            className={`badge-pop inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-white px-1.5 text-xs font-bold text-c4-navy ${pulse ? "" : ""}`}
+            className={`badge-pop inline-flex h-6 min-w-6 items-center justify-center bg-white px-1.5 text-xs font-bold text-c4-navy ${pulse ? "" : ""}`}
           >
             {count}
           </span>
@@ -200,7 +200,7 @@ export function OrderDock() {
         <div
           ref={panelRef}
           tabIndex={-1}
-          className={`absolute bottom-0 right-0 left-0 mx-auto flex max-h-[88svh] w-full max-w-md flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl outline-none transition-transform duration-300 sm:bottom-4 sm:right-4 sm:left-auto sm:max-h-[85svh] sm:rounded-3xl ${
+          className={`absolute bottom-0 right-0 left-0 mx-auto flex max-h-[88svh] w-full max-w-md flex-col overflow-hidden bg-white shadow-2xl outline-none transition-transform duration-300 sm:bottom-4 sm:right-4 sm:left-auto sm:max-h-[85svh] ${
             open ? "translate-y-0" : "translate-y-[110%]"
           }`}
         >
@@ -218,7 +218,7 @@ export function OrderDock() {
                 role="tab"
                 aria-selected={tab === id}
                 onClick={() => setTab(id)}
-                className={`flex-1 rounded-t-xl px-4 py-3 text-sm font-semibold transition-colors ${
+                className={`flex-1 px-4 py-3 text-sm font-semibold transition-colors ${
                   tab === id
                     ? "bg-c4-paper text-c4-navy"
                     : "text-c4-ink/60 hover:text-c4-navy"
@@ -230,7 +230,7 @@ export function OrderDock() {
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="mb-1 inline-flex h-9 w-9 items-center justify-center rounded-full text-c4-ink/60 transition-colors hover:bg-c4-paper hover:text-c4-navy"
+              className="mb-1 inline-flex h-9 w-9 items-center justify-center text-c4-ink/60 transition-colors hover:bg-c4-paper hover:text-c4-navy"
             >
               <span className="sr-only">Close</span>
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -252,7 +252,7 @@ export function OrderDock() {
                     type="button"
                     onClick={() => setCat(c.id)}
                     aria-pressed={cat === c.id}
-                    className={`shrink-0 rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors ${
+                    className={`shrink-0 px-3.5 py-1.5 text-xs font-semibold transition-colors ${
                       cat === c.id
                         ? "bg-c4-navy text-white"
                         : "border border-c4-grey/50 text-c4-navy hover:border-c4-navy"
@@ -282,7 +282,7 @@ export function OrderDock() {
                             type="button"
                             onClick={() => addItem(item)}
                             aria-label={`Add ${item.name} to the order`}
-                            className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-c4-grey/60 text-c4-navy transition-colors hover:border-c4-navy hover:bg-c4-navy hover:text-white"
+                            className="inline-flex h-8 w-8 shrink-0 items-center justify-center border border-c4-grey/60 text-c4-navy transition-colors hover:border-c4-navy hover:bg-c4-navy hover:text-white"
                           >
                             <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
                               <path strokeLinecap="round" d="M12 5v14M5 12h14" />
@@ -301,7 +301,7 @@ export function OrderDock() {
                                 })
                               }
                               aria-label={`One less ${item.name}`}
-                              className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-c4-paper text-c4-navy hover:bg-c4-grey/40"
+                              className="inline-flex h-8 w-8 items-center justify-center bg-c4-paper text-c4-navy hover:bg-c4-grey/40"
                             >
                               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
                                 <path strokeLinecap="round" d="M5 12h14" />
@@ -314,7 +314,7 @@ export function OrderDock() {
                               type="button"
                               onClick={() => addItem(item)}
                               aria-label={`One more ${item.name}`}
-                              className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-c4-navy text-white hover:bg-c4-navy-deep"
+                              className="inline-flex h-8 w-8 items-center justify-center bg-c4-navy text-white hover:bg-c4-navy-deep"
                             >
                               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
                                 <path strokeLinecap="round" d="M12 5v14M5 12h14" />
@@ -360,7 +360,7 @@ export function OrderDock() {
                           type="button"
                           aria-pressed={mode === id}
                           onClick={() => setMode(id)}
-                          className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
+                          className={`px-3 py-1.5 text-xs font-semibold transition-colors ${
                             mode === id
                               ? "bg-c4-navy text-white"
                               : "border border-c4-grey/50 text-c4-navy hover:border-c4-navy"
@@ -373,7 +373,7 @@ export function OrderDock() {
                     <button
                       type="button"
                       onClick={sendOrder}
-                      className="flex w-full items-center justify-center gap-2.5 rounded-full bg-c4-wa px-5 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-c4-wa-deep"
+                      className="flex w-full items-center justify-center gap-2.5 bg-c4-wa px-5 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-c4-wa-deep"
                     >
                       <WhatsAppGlyph className="h-4 w-4" />
                       {DOCK.sendOrder}
@@ -398,7 +398,7 @@ export function OrderDock() {
                       min={today}
                       value={day}
                       onChange={(e) => setDay(e.target.value)}
-                      className="w-full rounded-xl border border-c4-grey/50 bg-white px-3 py-2.5 text-sm text-c4-ink outline-none focus:border-c4-navy"
+                      className="w-full border border-c4-grey/50 bg-white px-3 py-2.5 text-sm text-c4-ink outline-none focus:border-c4-navy"
                     />
                   </label>
                   <label className="block">
@@ -408,7 +408,7 @@ export function OrderDock() {
                     <select
                       value={time}
                       onChange={(e) => setTime(e.target.value)}
-                      className="w-full rounded-xl border border-c4-grey/50 bg-white px-3 py-2.5 text-sm text-c4-ink outline-none focus:border-c4-navy"
+                      className="w-full border border-c4-grey/50 bg-white px-3 py-2.5 text-sm text-c4-ink outline-none focus:border-c4-navy"
                     >
                       {TIME_SLOTS.map((t) => (
                         <option key={t} value={t}>
@@ -427,7 +427,7 @@ export function OrderDock() {
                       type="button"
                       onClick={() => setGuests((g) => Math.max(1, g - 1))}
                       aria-label="Fewer guests"
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-c4-grey/60 text-c4-navy hover:border-c4-navy"
+                      className="inline-flex h-9 w-9 items-center justify-center border border-c4-grey/60 text-c4-navy hover:border-c4-navy"
                     >
                       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
                         <path strokeLinecap="round" d="M5 12h14" />
@@ -440,7 +440,7 @@ export function OrderDock() {
                       type="button"
                       onClick={() => setGuests((g) => Math.min(20, g + 1))}
                       aria-label="More guests"
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-c4-grey/60 text-c4-navy hover:border-c4-navy"
+                      className="inline-flex h-9 w-9 items-center justify-center border border-c4-grey/60 text-c4-navy hover:border-c4-navy"
                     >
                       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
                         <path strokeLinecap="round" d="M12 5v14M5 12h14" />
@@ -470,7 +470,7 @@ export function OrderDock() {
                         type="button"
                         aria-pressed={seat === val}
                         onClick={() => setSeat(val)}
-                        className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
+                        className={`px-3 py-1.5 text-xs font-semibold transition-colors ${
                           seat === val
                             ? "bg-c4-navy text-white"
                             : "border border-c4-grey/50 text-c4-navy hover:border-c4-navy"
@@ -490,14 +490,14 @@ export function OrderDock() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder={DOCK.namePlaceholder}
-                    className="w-full rounded-xl border border-c4-grey/50 bg-white px-3 py-2.5 text-sm text-c4-ink outline-none placeholder:text-c4-ink/40 focus:border-c4-navy"
+                    className="w-full border border-c4-grey/50 bg-white px-3 py-2.5 text-sm text-c4-ink outline-none placeholder:text-c4-ink/40 focus:border-c4-navy"
                   />
                 </label>
                 <button
                   type="button"
                   onClick={sendBooking}
                   disabled={!day}
-                  className="flex w-full items-center justify-center gap-2.5 rounded-full bg-c4-wa px-5 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-c4-wa-deep disabled:cursor-not-allowed disabled:opacity-40"
+                  className="flex w-full items-center justify-center gap-2.5 bg-c4-wa px-5 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-c4-wa-deep disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   <WhatsAppGlyph className="h-4 w-4" />
                   {DOCK.sendBook}

@@ -3,6 +3,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/data/site";
 import { SWRegister } from "@/components/site/sw-register";
+import { OrderDock } from "@/components/site/order-dock";
+import { ScrollTop } from "@/components/site/scroll-top";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -71,7 +73,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#032b63",
+  themeColor: "#223A6C",
   width: "device-width",
   initialScale: 1,
 };
@@ -87,13 +89,13 @@ const restaurantJsonLd = {
   logo: siteUrl + "/brand/logo-navy-800.png",
   description:
     "Casual restaurant and bar in Swakopmund. Flame-grilled plates, pap and chakalaka, seafood, takeaway boxes and a full bar on a shaded patio.",
-  telephone: SITE.phonePrimaryIntl,
+  telephone: SITE.phoneLandlineIntl,
   email: SITE.email,
   servesCuisine: ["Namibian", "Grill", "Seafood", "Braai"],
   priceRange: "N$55 - N$290",
   currenciesAccepted: "NAD",
   paymentAccepted: "Cash, Card",
-  menu: siteUrl + "/#menu",
+  menu: siteUrl + "/menu",
   acceptsReservations: "True",
   address: {
     "@type": "PostalAddress",
@@ -130,6 +132,8 @@ export default function RootLayout({
     <html lang="en" className={poppins.variable}>
       <body className="antialiased">
         {children}
+        <OrderDock />
+        <ScrollTop />
         <SWRegister />
         <script
           type="application/ld+json"

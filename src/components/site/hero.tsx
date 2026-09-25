@@ -1,26 +1,17 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import { HERO_SLIDES, SITE } from "@/data/site";
+import { HERO_SLIDES, ORDER_MSG, SITE, waLink } from "@/data/site";
 import { WhatsAppGlyph } from "./whatsapp-glyph";
-import { openDock } from "./nav";
 
-const INTERVAL = 5600;
-
-const CHIPS = [
-  { k: "Patio", v: "Shaded tables" },
-  { k: "Braai", v: "Over the coals" },
-  { k: "Bar", v: "Till late" },
-  { k: "Takeaway", v: "Boxes to go" },
-];
+const INTERVAL = 5200;
 
 export function Hero() {
   const [index, setIndex] = useState(0);
   // Progressive hero: slide 1 paints immediately, later slides load just
   // before their crossfade, keeping the initial transfer under budget.
   const [stage, setStage] = useState(1);
-  const touchX = useRef<number | null>(null);
 
   useEffect(() => {
     const t1 = setTimeout(() => setStage(2), 1600);
@@ -31,142 +22,120 @@ export function Hero() {
     };
   }, []);
 
-  const go = useCallback(
-    (i: number) => {
-      setIndex(((i % HERO_SLIDES.length) + HERO_SLIDES.length) % HERO_SLIDES.length);
-      setStage(HERO_SLIDES.length);
-    },
-    []
-  );
+  const go = useCallback((i: number) => {
+    setIndex(((i % HERO_SLIDES.length) + HERO_SLIDES.length) % HERO_SLIDES.length);
+    setStage(HERO_SLIDES.length); // manual navigation loads everything
+  }, []);
 
   useEffect(() => {
     const t = setInterval(() => go(index + 1), INTERVAL);
     return () => clearInterval(t);
   }, [index, go]);
 
-  const onPointerDown = (e: React.PointerEvent) => {
-    touchX.current = e.clientX;
-  };
-  const onPointerUp = (e: React.PointerEvent) => {
-    if (touchX.current === null) return;
-    const dx = e.clientX - touchX.current;
-    if (Math.abs(dx) > 48) go(index + (dx < 0 ? 1 : -1));
-    touchX.current = null;
-  };
-
   return (
-    <section
-      id="top"
-      aria-label="Welcome to C4 Restaurant and Bar"
-      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden bg-c4-navy"
-    >
-      {/* Full-bleed slider */}
-      <div
-        className="absolute inset-0"
-        onPointerDown={onPointerDown}
-        onPointerUp={onPointerUp}
-      >
-        {HERO_SLIDES.map((slide, i) => (
-          <div
-            key={slide.src}
-            className={`hero-slide absolute inset-0 ${i === index ? "active" : ""}`}
-            aria-hidden={i !== index}
-          >
-            {i < stage && (
-              <Image
-                src={slide.src}
-                alt={slide.alt}
-                fill
-                sizes="100vw"
-                className="hero-slide-img object-cover"
-                priority={i === 0}
-                // Slide 1 is the LCP image and keeps high quality; slides 2-3
-                // arrive mid-crossfade, so a lighter encode reads the same.
-                quality={i === 0 ? 82 : 75}
-              />
-            )}
+    <section id="top" aria-label="Welcome to C4 Restaurant and Bar" className="relative">
+      <div className="grid lg:min-h-[calc(100svh-6rem)] lg:grid-cols-[45%_55%]">
+        {/* Navy field */}
+        <div className="flex flex-col justify-center bg-c4-navy px-5 pb-10 pt-8 sm:px-8 lg:pb-14 lg:pt-16">
+          <div className="mx-auto w-full max-w-xl">
+            <h1 className="display text-4xl text-white sm:text-5xl lg:text-[3.4rem]">
+              The braai corner <br className="hidden lg:block" />
+              of Swakopmund.
+            </h1>
+            <p className="mt-5 max-w-md text-base leading-relaxed text-c4-grey sm:text-lg">
+              Flame-grilled plates, pap and chakalaka, fresh hake and a full
+              bar on the patio. Order on WhatsApp and we will have it ready.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <a
+                href={waLink(ORDER_MSG)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3.5 text-base font-semibold text-c4-navy transition-colors hover:bg-c4-grey"
+              >
+                <WhatsAppGlyph className="h-5 w-5" />
+                Order on WhatsApp
+              </a>
+              <a
+                href="/menu"
+                className="inline-flex items-center rounded-full border border-white/40 px-6 py-3.5 text-base font-medium text-white transition-colors hover:border-white"
+              >
+                See the menu
+              </a>
+            </div>
+
+            <p className="mt-6 text-sm text-c4-grey">
+              Prefer to call?{" "}
+              <a
+                href={`tel:${SITE.phoneLandlineIntl}`}
+                className="font-semibold text-white underline decoration-c4-grey/60 underline-offset-4 hover:decoration-white"
+              >
+                {SITE.phoneLandline} (landline)
+              </a>
+              {" or "}
+              <a
+                href={`tel:${SITE.phoneMobileIntl}`}
+                className="font-semibold text-white underline decoration-c4-grey/60 underline-offset-4 hover:decoration-white"
+              >
+                {SITE.phoneMobile} (mobile)
+              </a>
+            </p>
           </div>
-        ))}
-        {/* Legibility gradients: navy floor rising to clear sky */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-c4-navy-deep via-c4-navy-deep/45 to-c4-navy/10"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 hidden bg-gradient-to-r from-c4-navy-deep/70 via-transparent to-transparent lg:block"
-        />
-      </div>
-
-      {/* Slide controls */}
-      <div className="absolute right-4 top-24 z-10 flex flex-col gap-2 sm:right-6 sm:top-28">
-        {HERO_SLIDES.map((slide, i) => (
-          <button
-            key={slide.src}
-            type="button"
-            onClick={() => go(i)}
-            aria-label={`Show slide ${i + 1} of ${HERO_SLIDES.length}`}
-            aria-current={i === index}
-            className={`w-1 rounded-full transition-all duration-300 ${
-              i === index ? "h-8 bg-white" : "h-4 bg-white/50 hover:bg-white"
-            }`}
-          />
-        ))}
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-10 pt-36 sm:px-6 sm:pb-14">
-        <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white ring-1 ring-white/20 backdrop-blur-sm">
-          {SITE.tagline}
-        </p>
-        <h1 className="display max-w-3xl text-5xl text-white sm:text-6xl lg:text-7xl">
-          Fire, smoke and the
-          <span className="block text-c4-silver-light">cold drink waiting.</span>
-        </h1>
-
-        <div className="mt-8 flex flex-wrap items-center gap-3">
-          <button
-            type="button"
-            onClick={openDock}
-            className="inline-flex items-center gap-2.5 rounded-full bg-c4-wa px-7 py-4 text-base font-semibold text-white shadow-[0_16px_40px_-14px_rgba(37,211,102,0.55)] transition-colors hover:bg-c4-wa-deep"
-          >
-            <WhatsAppGlyph className="h-5 w-5" />
-            Order &amp; book
-          </button>
-          <a
-            href="#menu"
-            className="inline-flex items-center rounded-full bg-white/10 px-7 py-4 text-base font-semibold text-white ring-1 ring-white/30 backdrop-blur-sm transition-colors hover:bg-white/20"
-          >
-            See the menu
-          </a>
         </div>
 
-        {/* Glass fact chips */}
-        <ul className="mt-9 flex flex-wrap gap-2.5">
-          {CHIPS.map((c) => (
-            <li
-              key={c.k}
-              className="glass-light rounded-2xl px-4 py-2.5 text-c4-navy ring-1 ring-white/40"
+        {/* Photo slider */}
+        <div className="relative h-72 min-h-64 overflow-hidden sm:h-96 lg:h-auto">
+          {HERO_SLIDES.map((slide, i) => (
+            <div
+              key={slide.src}
+              className={`hero-slide absolute inset-0 ${i === index ? "active" : ""} ${i >= stage ? "bg-c4-navy-deep" : ""}`}
+              aria-hidden={i !== index}
             >
-              <span className="block text-sm font-bold leading-tight">{c.k}</span>
-              <span className="block text-xs leading-tight text-c4-ink/70">{c.v}</span>
-            </li>
+              {i < stage && (
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  className="hero-slide-img object-cover"
+                  priority={i === 0}
+                  quality={75}
+                />
+              )}
+            </div>
           ))}
-        </ul>
+          <div className="absolute bottom-4 right-4 z-10 flex gap-2">
+            {HERO_SLIDES.map((slide, i) => (
+              <button
+                key={slide.src}
+                type="button"
+                onClick={() => go(i)}
+                aria-label={`Show slide ${i + 1} of ${HERO_SLIDES.length}`}
+                aria-current={i === index}
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  i === index ? "w-7 bg-white" : "w-2.5 bg-white/50 hover:bg-white/80"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Facts strip */}
-      <div className="relative z-10 border-t border-white/10 bg-c4-navy-deep/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-8 gap-y-2.5 px-5 py-4 text-xs text-c4-silver-light sm:px-6 sm:text-sm">
+      <div className="bg-c4-navy-deep">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-8 gap-y-2.5 px-5 py-5 text-sm text-c4-grey sm:px-6">
           <p>{SITE.streetAddress}, {SITE.locality}</p>
           <p className="hidden sm:inline" aria-hidden="true">·</p>
           <p>{SITE.hours}</p>
           <p className="hidden sm:inline" aria-hidden="true">·</p>
           <a
-            href={`tel:${SITE.phonePrimaryIntl}`}
+            href={waLink(ORDER_MSG)}
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white"
           >
-            {SITE.phonePrimary}
+            WhatsApp {SITE.whatsappDisplay}
           </a>
         </div>
       </div>

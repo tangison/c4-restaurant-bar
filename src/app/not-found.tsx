@@ -1,17 +1,15 @@
 import Link from "next/link";
 import { WhatsAppGlyph } from "@/components/site/whatsapp-glyph";
-import { IconKnockout } from "@/components/site/logo";
-import { NAV, ORDER_MSG, SITE, waLink } from "@/data/site";
+import { ORDER_MSG, SITE, waLink } from "@/data/site";
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-c4-navy px-6 py-16 text-center">
-      <IconKnockout className="mx-auto h-20 w-auto bowl-breathe" />
-      <p className="display mt-6 text-7xl text-white">404</p>
+    <main className="flex min-h-screen flex-col items-center justify-center bg-c4-navy px-6 text-center">
+      <p className="display text-7xl text-white">404</p>
       <h1 className="mt-4 text-xl font-semibold text-white">
         That plate is not on the menu.
       </h1>
-      <p className="mt-3 max-w-md text-sm leading-relaxed text-c4-silver-light">
+      <p className="mt-3 max-w-md text-sm leading-relaxed text-c4-grey">
         The page you were looking for has moved or never existed. The
         restaurant, the bar and the patio are exactly where they always are.
       </p>
@@ -32,13 +30,6 @@ export default function NotFound() {
           WhatsApp {SITE.whatsappDisplay}
         </a>
       </div>
-      <nav aria-label="Recovery links" className="mt-10 flex flex-wrap justify-center gap-x-5 gap-y-2">
-        {NAV.map((item) => (
-          <Link key={item.href} href={item.href} className="text-xs text-c4-silver-light/80 underline decoration-c4-silver-light/30 underline-offset-4 hover:text-white">
-            {item.label}
-          </Link>
-        ))}
-      </nav>
     </main>
   );
 }

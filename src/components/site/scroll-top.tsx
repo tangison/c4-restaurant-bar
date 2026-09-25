@@ -27,7 +27,7 @@ export function ScrollTop() {
       type="button"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label="Scroll back to top"
-      className={`fixed bottom-5 left-5 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white text-c4-navy shadow-[0_10px_28px_-12px_rgba(2,26,64,0.55)] ring-1 ring-c4-grey/50 transition-[opacity,transform] duration-300 hover:bg-c4-paper ${
+      className={`fixed bottom-5 left-5 z-50 inline-flex h-12 w-12 items-center justify-center bg-white text-c4-navy shadow-[0_10px_28px_-12px_rgba(26,46,87,0.55)] ring-1 ring-c4-grey/50 transition-[opacity,transform] duration-300 hover:bg-c4-paper ${
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
       }`}
     >
@@ -38,7 +38,7 @@ export function ScrollTop() {
           cy="24"
           r={R}
           fill="none"
-          stroke="#032b63"
+          stroke="#223a6c"
           strokeWidth="3"
           strokeLinecap="round"
           strokeDasharray={C}

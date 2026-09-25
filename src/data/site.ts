@@ -8,14 +8,19 @@ export const SITE = {
   tagline: "The braai corner of Swakopmund",
   // Production URL confirmed live at deploy (2026-09-25)
   url: "https://c4-restaurant-bar.vercel.app",
-  // Owner-supplied contact facts
+  // Owner-supplied contact facts (confirmed by owner, 2026-09-25):
+  // 083 is the landline, 081 is the mobile and the WhatsApp line.
+  phoneLandline: "083 783 7780",
+  phoneLandlineIntl: "+264837837780",
+  phoneMobile: "081 400 6471",
+  phoneMobileIntl: "+264814006471",
+  // Kept for older call sites: primary = landline, secondary = mobile.
   phonePrimary: "083 783 7780",
   phonePrimaryIntl: "+264837837780",
   phoneSecondary: "081 400 6471",
   phoneSecondaryIntl: "+264814006471",
-  // ASSUMPTION: primary WhatsApp line (first owner number). Swap here if needed.
-  whatsapp: "264837837780",
-  whatsappDisplay: "083 783 7780",
+  whatsapp: "264814006471",
+  whatsappDisplay: "081 400 6471",
   email: "c4restaurantbar@gmail.com",
   streetAddress: "Corner of Aaron Edward and Kovambo Nujoma Street",
   locality: "Swakopmund",
@@ -35,12 +40,12 @@ export const ORDER_MSG =
 export const BOOK_MSG =
   "Hi C4 Restaurant & Bar! I would like to book a table, please.";
 
+// Multi-page navigation: real routes, one page per subject.
 export const NAV = [
-  { label: "Menu", href: "#menu" },
-  { label: "The Bar", href: "#bar" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Good to know", href: "#faq" },
-  { label: "Find us", href: "#visit" },
+  { label: "Menu", href: "/menu" },
+  { label: "The Bar", href: "/bar" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Find us", href: "/visit" },
 ];
 
 // Widget copy: the order-and-book dock is WhatsApp-first. Nothing is paid or
@@ -223,11 +228,11 @@ export const GALLERY = [
 export const FAQS = [
   {
     q: "Do you take orders on WhatsApp?",
-    a: "Yes, that is the fastest way. Send us what you want, we confirm the total and the prep time, and you collect at the counter or eat on the patio. You can also tap any plate on this page to start the order.",
+    a: "Yes, that is the fastest way. Send us what you want, we confirm the total and the prep time, and you collect at the counter or eat on the patio. You can also build a basket with the Order & book button and send the whole list.",
   },
   {
     q: "Where exactly are you?",
-    a: "On the corner of Aaron Edward and Kovambo Nujoma Street in Swakopmund. Look for the blue fence and the umbrellas. There is a map and a directions link in the Find us section below.",
+    a: "On the corner of Aaron Edward and Kovambo Nujoma Street in Swakopmund. Look for the blue fence and the umbrellas. There is a map and a directions link further down this page.",
   },
   {
     q: "Can I book a table or bring a group?",

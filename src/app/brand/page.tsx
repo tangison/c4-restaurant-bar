@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/site/nav";
 import { Footer } from "@/components/site/footer";
-import { ScrollTop } from "@/components/site/scroll-top";
 import { Reveal } from "@/components/site/reveal";
 import { LogoNavy, LogoKnockout, IconNavy } from "@/components/site/logo";
 
@@ -13,13 +12,11 @@ export const metadata: Metadata = {
 };
 
 const PALETTE = [
-  { name: "Navy", hex: "#032b63", note: "Primary. Logo ink, headers, buttons. Sampled median from the 2026 logo artwork.", dark: true },
-  { name: "Navy deep", hex: "#021a40", note: "Footer, drawer and overlay surfaces one step darker.", dark: true },
-  { name: "Navy soft", hex: "#0a3a80", note: "Hover and gradient step between navy and blue.", dark: true },
-  { name: "Blue accent", hex: "#2c79b4", note: "Accent from the client brand guide. Focus rings, links, details.", dark: true },
-  { name: "Silver", hex: "#90939a", note: "Logo silver, measured. Dividers and large text on navy.", dark: false },
-  { name: "Silver light", hex: "#c6c9cf", note: "Body text on navy surfaces, AA contrast.", dark: false },
-  { name: "Grey", hex: "#bcbbb9", note: "Borders and dotted price leaders on light surfaces.", dark: false },
+  { name: "Navy", hex: "#223a6c", note: "Primary. Header, hero field, buttons, brand bar base. From the client brand guide.", dark: true },
+  { name: "Navy deep", hex: "#1a2e57", note: "Footer, drawer and overlay surfaces one step darker.", dark: true },
+  { name: "Blue accent", hex: "#2c79b4", note: "Accent from the client brand guide. Focus rings, links, details, the top brand bar.", dark: true },
+  { name: "Blue deep", hex: "#23608f", note: "Icons and small headings on light surfaces.", dark: true },
+  { name: "Grey", hex: "#bcbbb9", note: "Borders, dotted price leaders, body text on navy.", dark: false },
   { name: "Paper", hex: "#f7f6f3", note: "Warm light surface behind the light sections.", dark: false },
   { name: "Ink", hex: "#1e2430", note: "Body text on light surfaces.", dark: true },
   { name: "WhatsApp", hex: "#25d366", note: "Functional colour for the WhatsApp-first actions only.", dark: true },
@@ -46,9 +43,9 @@ export default function BrandPage() {
             How C4 looks, and why
           </h1>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-c4-ink/70">
-            Every token on this page is measured from the client&rsquo;s own
-            artwork: the navy and silver are medians sampled from the 2026 logo
-            files, traced to vector for the web. Nothing here is invented.
+            Every token on this page comes from the client&rsquo;s own brand
+            guide and approved design: navy, blue and silver straight from the
+            artwork, traced to vector for the web. Nothing here is invented.
           </p>
 
           {/* Logo variants */}
@@ -71,10 +68,10 @@ export default function BrandPage() {
                 </div>
                 <div className="rounded-3xl bg-c4-navy p-8">
                   <LogoKnockout className="h-14 w-auto" />
-                  <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-c4-silver-light">
+                  <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-c4-grey">
                     Knockout on navy
                   </p>
-                  <p className="mt-1 text-xs text-c4-silver-light/70">
+                  <p className="mt-1 text-xs text-c4-grey/70">
                     <a href="/brand/logo-knockout.svg" className="underline underline-offset-2 hover:text-white">logo-knockout.svg</a>
                     {" / "}
                     <a href="/brand/logo-silver.svg" className="underline underline-offset-2 hover:text-white">logo-silver.svg</a>
@@ -172,7 +169,6 @@ export default function BrandPage() {
         </div>
       </main>
       <Footer />
-      <ScrollTop />
     </>
   );
 }
