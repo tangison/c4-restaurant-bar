@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/data/site";
+import { SWRegister } from "@/components/site/sw-register";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -70,7 +71,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#223A6C",
+  themeColor: "#032b63",
   width: "device-width",
   initialScale: 1,
 };
@@ -83,7 +84,7 @@ const restaurantJsonLd = {
   legalName: SITE.legalName,
   url: siteUrl,
   image: [siteUrl + "/og-c4.jpg", siteUrl + "/photos/hero-patio.webp"],
-  logo: siteUrl + "/brand/logo-400.png",
+  logo: siteUrl + "/brand/logo-navy-800.png",
   description:
     "Casual restaurant and bar in Swakopmund. Flame-grilled plates, pap and chakalaka, seafood, takeaway boxes and a full bar on a shaded patio.",
   telephone: SITE.phonePrimaryIntl,
@@ -129,6 +130,7 @@ export default function RootLayout({
     <html lang="en" className={poppins.variable}>
       <body className="antialiased">
         {children}
+        <SWRegister />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd) }}

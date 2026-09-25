@@ -2,29 +2,90 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { MENU, ORDER_MSG, waLink } from "@/data/site";
+import { MENU, DOCK } from "@/data/site";
 import { WhatsAppGlyph } from "./whatsapp-glyph";
 import { Reveal } from "./reveal";
+import { openDock } from "./nav";
+
+function ItemRow({ item }: { item: { name: string; desc: string; price: number; tag?: string } }) {
+  const [openDesc, setOpenDesc] = useState(false);
+
+  const add = () =>
+    window.dispatchEvent(
+      new CustomEvent("c4:add-item", { detail: { name: item.name, price: item.price } })
+    );
+
+  return (
+    <li className="py-3.5">
+      <div className="price-row flex items-baseline gap-3">
+        <button
+          type="button"
+          onClick={add}
+          aria-label={`Add ${item.name} to the order`}
+          className="inline-flex h-7 w-7 shrink-0 translate-y-1 items-center justify-center rounded-full border border-c4-grey/60 text-c4-navy transition-colors hover:border-c4-navy hover:bg-c4-navy hover:text-white"
+        >
+          <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+            <path strokeLinecap="round" d="M12 5v14M5 12h14" />
+          </svg>
+        </button>
+        <h3 className="text-base font-semibold text-c4-ink">
+          {item.name}
+          {item.tag && (
+            <span className="ml-2.5 rounded-full bg-c4-paper px-2.5 py-0.5 align-middle text-[11px] font-semibold uppercase tracking-wide text-c4-navy">
+              {item.tag}
+            </span>
+          )}
+        </h3>
+        <span className="price-leader" aria-hidden="true" />
+        <span className="text-base font-semibold text-c4-navy">N$ {item.price}</span>
+      </div>
+      <button
+        type="button"
+        onClick={() => setOpenDesc((v) => !v)}
+        aria-expanded={openDesc}
+        className="mt-0.5 inline-flex items-center gap-1 pl-10 text-xs font-medium text-c4-ink/50 transition-colors hover:text-c4-navy"
+      >
+        {openDesc ? "Hide" : "What is in it"}
+        <svg
+          viewBox="0 0 24 24"
+          className={`h-3.5 w-3.5 transition-transform duration-200 ${openDesc ? "rotate-180" : ""}`}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+      <p
+        className={`overflow-hidden pl-10 text-sm leading-relaxed text-c4-ink/65 transition-[grid-template-rows] duration-300 ${
+          openDesc ? "mt-1 grid grid-rows-[1fr]" : "grid grid-rows-[0fr]"
+        }`}
+      >
+        <span className="min-h-0 overflow-hidden">{item.desc}</span>
+      </p>
+    </li>
+  );
+}
 
 export function MenuSection() {
   const [active, setActive] = useState(MENU[0].id);
   const group = MENU.find((g) => g.id === active) ?? MENU[0];
 
   return (
-    <section id="menu" aria-labelledby="menu-heading" className="scroll-mt-16 bg-white py-20 sm:py-24">
+    <section id="menu" aria-labelledby="menu-heading" className="scroll-mt-24 bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <Reveal>
           <h2 id="menu-heading" className="display text-3xl text-c4-navy sm:text-4xl">
             Today&rsquo;s plates
           </h2>
-          <p className="mt-4 max-w-prose leading-relaxed text-c4-ink/75">
-            Four menus, one kitchen. Tap a plate to start a WhatsApp order, or
-            send the whole list when you are ready. Prices in Namibian dollars.
+          <p className="mt-3 max-w-prose text-sm leading-relaxed text-c4-ink/70">
+            Tap the plus next to any plate to build your order. Prices in Namibian dollars, market-related.
           </p>
         </Reveal>
 
         <Reveal delay={1}>
-          <div role="tablist" aria-label="Menu sections" className="mt-8 flex flex-wrap gap-2">
+          <div role="tablist" aria-label="Menu sections" className="mt-7 flex flex-wrap gap-2">
             {MENU.map((g) => {
               const selected = g.id === active;
               return (
@@ -62,64 +123,50 @@ export function MenuSection() {
           role="tabpanel"
           id={`panel-${group.id}`}
           aria-labelledby={`tab-${group.id}`}
-          className="mt-10 grid gap-10 lg:grid-cols-[38%_1fr] lg:gap-14"
+          className="mt-10 grid gap-10 lg:grid-cols-[36%_1fr] lg:gap-14"
         >
+          {/* Sticky visual card */}
           <Reveal className="lg:sticky lg:top-24 lg:self-start">
-            <div className="overflow-hidden rounded-2xl border border-c4-grey/40">
+            <div className="relative overflow-hidden rounded-3xl">
               <Image
                 src={group.photo}
                 alt={`${group.label} at C4 Restaurant & Bar`}
                 width={900}
-                height={676}
-                className="h-auto w-full object-cover"
-                sizes="(max-width: 1024px) 100vw, 38vw"
+                height={1013}
+                className="aspect-[4/4.5] h-auto w-full object-cover"
+                sizes="(max-width: 1024px) 100vw, 36vw"
                 priority={false}
               />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-t from-c4-navy-deep/85 via-c4-navy-deep/10 to-transparent"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <Image
+                  src={`/icons3d/${group.icon}.webp`}
+                  alt=""
+                  width={56}
+                  height={56}
+                  className="mb-3 h-14 w-14 object-contain drop-shadow-lg"
+                  aria-hidden="true"
+                />
+                <p className="text-sm font-semibold leading-snug text-white">{group.note}</p>
+              </div>
             </div>
-            <p className="mt-4 text-sm italic text-c4-ink/60">{group.note}</p>
-            <a
-              href={waLink(`Hi C4! I would like to order from the ${group.label.toLowerCase()} menu, please.`)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2.5 rounded-full bg-c4-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-c4-navy-deep"
+            <button
+              type="button"
+              onClick={openDock}
+              className="mt-5 inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-c4-wa px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-c4-wa-deep sm:w-auto"
             >
               <WhatsAppGlyph className="h-4 w-4" />
-              Order from this menu
-            </a>
+              {DOCK.orderTab}
+            </button>
           </Reveal>
 
           <div>
             <ul className="divide-y divide-c4-grey/40 border-y border-c4-grey/40">
               {group.items.map((item) => (
-                <li key={item.name} className="py-4">
-                  <div className="price-row flex items-baseline">
-                    <h3 className="text-base font-semibold text-c4-ink">
-                      {item.name}
-                      {item.tag && (
-                        <span className="ml-2.5 rounded-full bg-c4-paper px-2.5 py-0.5 align-middle text-[11px] font-semibold uppercase tracking-wide text-c4-navy">
-                          {item.tag}
-                        </span>
-                      )}
-                    </h3>
-                    <span className="price-leader" aria-hidden="true" />
-                    <span className="text-base font-semibold text-c4-navy">
-                      N$ {item.price}
-                    </span>
-                  </div>
-                  <div className="mt-1 flex items-end justify-between gap-4">
-                    <p className="text-sm leading-relaxed text-c4-ink/65">{item.desc}</p>
-                    <a
-                      href={waLink(`Hi C4! I would like to order the ${item.name} (N$ ${item.price}), please.`)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-c4-grey/50 px-3 py-1.5 text-xs font-semibold text-c4-navy transition-colors hover:border-c4-navy hover:bg-c4-navy hover:text-white"
-                      aria-label={`Order ${item.name} on WhatsApp`}
-                    >
-                      <WhatsAppGlyph className="h-3.5 w-3.5" />
-                      Order
-                    </a>
-                  </div>
-                </li>
+                <ItemRow key={item.name} item={item} />
               ))}
             </ul>
             <p className="mt-5 text-sm text-c4-ink/60">

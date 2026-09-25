@@ -15,16 +15,15 @@ export function Gallery() {
   };
 
   return (
-    <section id="gallery" aria-labelledby="gallery-heading" className="scroll-mt-16 bg-c4-paper py-20 sm:py-24">
+    <section id="gallery" aria-labelledby="gallery-heading" className="scroll-mt-24 bg-c4-paper py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <h2 id="gallery-heading" className="display text-3xl text-c4-navy sm:text-4xl">
               From the pass
             </h2>
-            <p className="mt-4 max-w-prose leading-relaxed text-c4-ink/75">
-              Straight from our kitchen and the patio: the platters, the boxes
-              and the plates that keep the corner busy.
+            <p className="mt-3 max-w-prose text-sm leading-relaxed text-c4-ink/70">
+              Straight from our kitchen and the patio.
             </p>
           </div>
           <div className="flex gap-2">
@@ -55,12 +54,14 @@ export function Gallery() {
       <Reveal delay={1}>
         <div
           ref={rail}
-          className="rail mt-10 flex gap-4 overflow-x-auto px-5 pb-2 sm:px-6 lg:px-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))] lg:[mask-image:linear-gradient(to_right,transparent,black_2rem,black_calc(100%-2rem),transparent)]"
+          className="rail mt-10 flex gap-4 overflow-x-auto px-5 pb-2 sm:px-6 lg:px-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]"
         >
-          {GALLERY.map((shot) => (
+          {GALLERY.map((shot, i) => (
             <figure
               key={shot.src}
-              className="w-64 shrink-0 overflow-hidden rounded-xl border border-c4-grey/40 bg-white transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_16px_32px_-20px_rgba(34,58,108,0.5)] sm:w-72"
+              className={`group relative w-64 shrink-0 overflow-hidden rounded-2xl bg-white sm:w-80 ${
+                i % 3 === 1 ? "sm:mt-6" : ""
+              }`}
             >
               <Image
                 src={shot.src}
@@ -68,8 +69,8 @@ export function Gallery() {
                 width={800}
                 height={600}
                 loading="lazy"
-                className="aspect-[4/3] w-full object-cover"
-                sizes="288px"
+                className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 640px) 80vw, 320px"
               />
             </figure>
           ))}

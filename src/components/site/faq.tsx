@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { FAQS, BOOK_MSG, waLink } from "@/data/site";
-import { WhatsAppGlyph } from "./whatsapp-glyph";
+import { FAQS } from "@/data/site";
 import { Reveal } from "./reveal";
+import { openDock } from "./nav";
 
 export function Faq() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="scroll-mt-16 bg-white py-20 sm:py-24">
+    <section id="faq" aria-labelledby="faq-heading" className="scroll-mt-24 bg-white py-20 sm:py-24">
       <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-6 lg:grid-cols-[34%_1fr] lg:gap-16">
         <div className="flex flex-col lg:justify-between">
           <Reveal>
@@ -22,15 +22,13 @@ export function Faq() {
             </p>
           </Reveal>
           <Reveal delay={1} className="mt-8 lg:mt-10">
-            <a
-              href={waLink(BOOK_MSG)}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => openDock()}
               className="inline-flex items-center gap-2.5 rounded-full bg-c4-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-c4-navy-deep"
             >
-              <WhatsAppGlyph className="h-4 w-4" />
               Book a table
-            </a>
+            </button>
           </Reveal>
         </div>
 

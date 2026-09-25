@@ -36,9 +36,14 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* C4 brand tokens, from the approved brand guide */
-  --color-c4-navy: #223a6c;
-  --color-c4-navy-deep: #1a2e57;
+  /* C4 brand tokens, resampled from the 2026 logo artwork (see /brand).
+     Navy and silver are measured medians from the vectorised logo;
+     blue accent comes from the client brand guide. */
+  --color-c4-navy: #032b63;
+  --color-c4-navy-deep: #021a40;
+  --color-c4-navy-soft: #0a3a80;
+  --color-c4-silver: #90939a;
+  --color-c4-silver-light: #c6c9cf;
   --color-c4-grey: #bcbbb9;
   --color-c4-paper: #f7f6f3;
   --color-c4-ink: #1e2430;
@@ -100,7 +105,7 @@
     border: 2px solid #eceae6;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #223a6c;
+    background: #032b63;
   }
   :focus-visible {
     outline: 2px solid #2c79b4;
@@ -184,6 +189,105 @@
   }
   .rail > * {
     scroll-snap-align: start;
+  }
+  /* Brand bar: 4px accent strip pinned to the top edge */
+  .brand-bar {
+    background: linear-gradient(90deg, #032b63 0%, #0a3a80 45%, #2c79b4 100%);
+  }
+  /* Glass surface for the floating chrome */
+  .glass-navy {
+    background: rgba(3, 26, 54, 0.72);
+    backdrop-filter: blur(18px) saturate(1.35);
+    -webkit-backdrop-filter: blur(18px) saturate(1.35);
+  }
+  .glass-light {
+    background: rgba(247, 246, 243, 0.78);
+    backdrop-filter: blur(14px) saturate(1.2);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  }
+  /* Offcanvas drawer motion */
+  .drawer-panel {
+    transform: translateX(100%);
+    transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .drawer-panel.open {
+    transform: translateX(0);
+  }
+  .drawer-link {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  .drawer-panel.open .drawer-link {
+    animation: drawer-link-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .drawer-panel.open .drawer-link:nth-child(1) { animation-delay: 0.08s; }
+  .drawer-panel.open .drawer-link:nth-child(2) { animation-delay: 0.14s; }
+  .drawer-panel.open .drawer-link:nth-child(3) { animation-delay: 0.2s; }
+  .drawer-panel.open .drawer-link:nth-child(4) { animation-delay: 0.26s; }
+  .drawer-panel.open .drawer-link:nth-child(5) { animation-delay: 0.32s; }
+  .drawer-panel.open .drawer-link:nth-child(6) { animation-delay: 0.38s; }
+  @keyframes drawer-link-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  /* Marquee band */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 34s linear infinite;
+  }
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  /* Loading screen */
+  .steam-puff {
+    transform-origin: 50% 100%;
+    animation: steam 1.6s ease-in-out infinite;
+  }
+  .steam-puff.s2 { animation-delay: 0.35s; }
+  .steam-puff.s3 { animation-delay: 0.7s; }
+  @keyframes steam {
+    0% { opacity: 0; transform: translateY(4px) scale(0.9); }
+    35% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-7px) scale(1.06); }
+  }
+  .bowl-breathe {
+    animation: breathe 1.6s ease-in-out infinite;
+  }
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  /* Order dock badge pulse */
+  .badge-pop {
+    animation: badge-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes badge-pop {
+    0% { transform: scale(0.4); }
+    70% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+  }
+  /* Scroll-top ring */
+  .ring-progress {
+    transition: stroke-dashoffset 0.18s linear;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .steam-puff,
+  .bowl-breathe,
+  .badge-pop {
+    animation: none;
+  }
+  .drawer-panel {
+    transition-duration: 0.01s;
   }
 }
 

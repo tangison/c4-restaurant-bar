@@ -1,7 +1,8 @@
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
-import { ORDER_MSG, SITE, waLink } from "@/data/site";
+import { HOURS_ROWS, ORDER_MSG, SITE, waLink } from "@/data/site";
 import { WhatsAppGlyph } from "./whatsapp-glyph";
 import { Reveal } from "./reveal";
+import { openDock } from "./nav";
 
 const MAP_SRC =
   "https://maps.google.com/maps?q=" +
@@ -14,16 +15,15 @@ const DIRECTIONS_URL =
 
 export function Visit() {
   return (
-    <section id="visit" aria-labelledby="visit-heading" className="scroll-mt-16 bg-c4-paper py-20 sm:py-24">
+    <section id="visit" aria-labelledby="visit-heading" className="scroll-mt-24 bg-c4-paper py-20 sm:py-24">
       <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-16">
         <div>
           <Reveal>
             <h2 id="visit-heading" className="display text-3xl text-c4-navy sm:text-4xl">
               Find the corner
             </h2>
-            <p className="mt-4 max-w-prose leading-relaxed text-c4-ink/75">
-              Look for the blue fence and the umbrellas on the corner of Aaron
-              Edward and Kovambo Nujoma Street. Parking on the sand in front.
+            <p className="mt-3 max-w-prose text-sm leading-relaxed text-c4-ink/70">
+              Look for the blue fence and the umbrellas. Parking on the sand in front.
             </p>
           </Reveal>
 
@@ -70,21 +70,26 @@ export function Visit() {
                 <Clock className="mt-0.5 h-5 w-5 shrink-0 text-c4-blue-deep" aria-hidden="true" />
                 <div>
                   <dt className="text-sm font-semibold text-c4-ink">Hours</dt>
-                  <dd className="mt-1 text-sm leading-relaxed text-c4-ink/70">{SITE.hours}</dd>
+                  <dd className="price-row mt-1 space-y-0.5 text-sm leading-relaxed text-c4-ink/70">
+                    {HOURS_ROWS.map((r) => (
+                      <p key={r.d}>
+                        <span className="inline-block min-w-[13rem] font-medium text-c4-ink">{r.d}</span>
+                        {r.h}
+                      </p>
+                    ))}
+                  </dd>
                 </div>
               </div>
             </dl>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href={waLink(ORDER_MSG)}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={openDock}
                 className="inline-flex items-center gap-2.5 rounded-full bg-c4-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-c4-navy-deep"
               >
-                <WhatsAppGlyph className="h-4 w-4" />
-                WhatsApp us
-              </a>
+                Order &amp; book
+              </button>
               <a
                 href={DIRECTIONS_URL}
                 target="_blank"
@@ -93,12 +98,21 @@ export function Visit() {
               >
                 Open directions in Google Maps
               </a>
+              <a
+                href={waLink(ORDER_MSG)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-c4-wa/40 bg-c4-wa/10 px-6 py-3 text-sm font-semibold text-c4-wa-deep transition-colors hover:bg-c4-wa/20"
+              >
+                <WhatsAppGlyph className="h-4 w-4" />
+                Chat now
+              </a>
             </div>
           </Reveal>
         </div>
 
         <Reveal delay={1} className="lg:self-start">
-          <div className="overflow-hidden rounded-2xl border border-c4-grey/40 bg-white">
+          <div className="overflow-hidden rounded-3xl border border-c4-grey/40 bg-white shadow-[0_24px_52px_-30px_rgba(3,43,99,0.35)]">
             <iframe
               src={MAP_SRC}
               title="Map to C4 Restaurant & Bar on the corner of Aaron Edward and Kovambo Nujoma Street, Swakopmund"

@@ -43,6 +43,60 @@ export const NAV = [
   { label: "Find us", href: "#visit" },
 ];
 
+// Widget copy: the order-and-book dock is WhatsApp-first. Nothing is paid or
+// confirmed on the site; the composed message is the order.
+export const DOCK = {
+  fab: "Order & book",
+  orderTab: "Order food",
+  bookTab: "Book a table",
+  orderHint: "Tap the plates you want, then send the list on WhatsApp. We confirm the total and the prep time.",
+  bookHint: "Pick a day, a time and how many are coming. We confirm on WhatsApp.",
+  sendOrder: "Send order on WhatsApp",
+  sendBook: "Send booking on WhatsApp",
+  pickup: "Collect",
+  eatIn: "Eat with us",
+  totalLabel: "Estimated total",
+  totalNote: "Estimate only. Final total is confirmed on WhatsApp before we cook.",
+  clear: "Clear list",
+  empty: "Nothing in the basket yet. Tap any plate on the menu and it lands here.",
+  guests: "Guests",
+  date: "Day",
+  time: "Time",
+  seating: "Seating",
+  seatPatio: "Patio",
+  seatInside: "Inside",
+  seatEither: "Either",
+  name: "Name for the booking",
+  namePlaceholder: "So we know who to look for",
+  timeSlotNote: "Kitchen takes orders until 21:00.",
+} as const;
+
+export const TIME_SLOTS = [
+  "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30",
+  "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30",
+  "19:00", "19:30", "20:00", "20:30", "21:00",
+];
+
+export const HOURS_ROWS = [
+  { d: "Monday to Thursday", h: "11:00 - 21:30" },
+  { d: "Friday and Saturday", h: "11:00 - 22:30" },
+  { d: "Sunday and public holidays", h: "11:00 - 21:00" },
+];
+
+// ASSUMPTION: the day-split hours above unpack the owner's "open daily from
+// 11:00" line for the visit section. Owner confirms before sign-off.
+
+export const MARQUEE = [
+  "Flame-grilled",
+  "Ice-cold draught",
+  "Pap & chakalaka",
+  "Fresh hake",
+  "Patio seats",
+  "Takeaway boxes",
+  "Braai packs",
+  "Family friendly",
+];
+
 export type MenuItem = {
   name: string;
   desc: string;

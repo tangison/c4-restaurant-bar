@@ -259,6 +259,18 @@
       "origin": "Photos/Food-Braai-Grill/c4-braai-03.jpg",
       "treatment": "resampled to 1200w, WebP q82",
       "source": "C4-Complete-Package.zip via filebin.net/wvz9tqcq0035k2i8 (Mr BK, 2026-09-24)"
+    },
+    {
+      "file": "/brand/logo-*.svg + /brand/icon-*.svg + favicon suite",
+      "origin": "client package: C4_Restaurant_Bar_Logo_Assets.zip (Original_Navy + Silver PNG, 1969x799, transparent)",
+      "treatment": "colour-snapped to sampled medians (navy #032b63, silver #90939a), traced to true vector per colour layer with potracer (pure-python potrace), verified over checkerboard + magenta canvases",
+      "source": "C4_Restaurant_Bar_Logo_Assets.zip via filebin.net/wvz9tqcq0035k2i8 (owner, 2026-09-25)"
+    },
+    {
+      "file": "/og-c4.jpg",
+      "origin": "hero-braai.webp + knockout logo raster composed at 1200x630",
+      "treatment": "navy legibility gradient, brand bar top edge, JPEG q86",
+      "source": "composed from approved brand assets, 2026-09-25"
     }
   ]
 }
