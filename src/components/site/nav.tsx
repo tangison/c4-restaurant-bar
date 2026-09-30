@@ -110,7 +110,7 @@ export function Nav() {
                 onClick={() => setOpen(true)}
                 aria-expanded={open}
                 aria-controls="mobile-nav"
-                className="inline-flex h-10 w-10 items-center justify-center text-white transition-colors hover:bg-white/10 md:hidden"
+                className="inline-flex h-11 w-11 items-center justify-center text-white transition-colors hover:bg-white/10 md:hidden"
               >
                 <span className="sr-only">Open menu</span>
                 <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -151,7 +151,7 @@ export function Nav() {
               type="button"
               ref={closeRef}
               onClick={() => setOpen(false)}
-              className="inline-flex h-10 w-10 items-center justify-center text-white transition-colors hover:bg-white/10"
+              className="inline-flex h-11 w-11 items-center justify-center text-white transition-colors hover:bg-white/10"
             >
               <span className="sr-only">Close menu</span>
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
