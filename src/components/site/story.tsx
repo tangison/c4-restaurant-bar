@@ -12,7 +12,7 @@ export function Story() {
     <section aria-labelledby="story-heading" className="bg-c4-paper py-20 sm:py-24">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-16">
         <Reveal className="relative">
-          <div className="overflow-hidden rounded-2xl border border-c4-grey/40">
+          <div className="overflow-hidden  border border-c4-grey/40">
             <Image
               src="/photos/story-sign.webp"
               alt="The C4 Restaurant & Bar sign on the corner"
@@ -22,7 +22,7 @@ export function Story() {
               sizes="(max-width: 1024px) 100vw, 45vw"
             />
           </div>
-          <div className="mt-4 w-3/4 overflow-hidden rounded-2xl border border-c4-grey/40 sm:ml-auto sm:mt-6 sm:w-2/3">
+          <div className="mt-4 w-3/4 overflow-hidden  border border-c4-grey/40 sm:ml-auto sm:mt-6 sm:w-2/3">
             <Image
               src="/photos/story-patio.webp"
               alt="Staff serving tables on the C4 patio"

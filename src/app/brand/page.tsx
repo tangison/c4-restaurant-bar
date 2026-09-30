@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/site/nav";
+import { PageHead } from "@/components/site/page-head";
 import { Footer } from "@/components/site/footer";
 import { Reveal } from "@/components/site/reveal";
 import { LogoNavy, LogoKnockout, IconNavy } from "@/components/site/logo";
@@ -34,19 +35,12 @@ export default function BrandPage() {
   return (
     <>
       <Nav />
-      <main className="bg-c4-paper pb-20 pt-28 sm:pt-32">
+      <PageHead
+        title="How C4 looks, and why"
+        line="Every token on this page comes from the client's own brand guide and approved design: navy, blue and silver straight from the artwork, traced to vector for the web. Nothing here is invented."
+      />
+      <main className="bg-c4-paper pb-20 pt-12 sm:pt-14">
         <div className="mx-auto max-w-4xl px-5 sm:px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-c4-blue-deep">
-            Brand kit
-          </p>
-          <h1 className="display mt-3 text-4xl text-c4-navy sm:text-5xl">
-            How C4 looks, and why
-          </h1>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-c4-ink/70">
-            Every token on this page comes from the client&rsquo;s own brand
-            guide and approved design: navy, blue and silver straight from the
-            artwork, traced to vector for the web. Nothing here is invented.
-          </p>
 
           {/* Logo variants */}
           <Reveal>
@@ -55,44 +49,44 @@ export default function BrandPage() {
                 Logo variants
               </h2>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-3xl border border-c4-grey/40 bg-white p-8">
+                <div className=" border border-c4-grey/40 bg-white p-8">
                   <LogoNavy className="h-14 w-auto" />
-                  <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-c4-ink/60">
+                  <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-c4-ink/70">
                     Navy on light
                   </p>
-                  <p className="mt-1 text-xs text-c4-ink/50">
+                  <p className="mt-1 text-xs text-c4-ink/70">
                     <a href="/brand/logo-navy.svg" className="underline underline-offset-2 hover:text-c4-navy">logo-navy.svg</a>
                     {" / "}
                     <a href="/brand/logo-navy-800.png" className="underline underline-offset-2 hover:text-c4-navy">logo-navy-800.png</a>
                   </p>
                 </div>
-                <div className="rounded-3xl bg-c4-navy p-8">
+                <div className=" bg-c4-navy p-8">
                   <LogoKnockout className="h-14 w-auto" />
                   <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-c4-grey">
                     Knockout on navy
                   </p>
-                  <p className="mt-1 text-xs text-c4-grey/70">
+                  <p className="mt-1 text-xs text-c4-grey">
                     <a href="/brand/logo-knockout.svg" className="underline underline-offset-2 hover:text-white">logo-knockout.svg</a>
                     {" / "}
                     <a href="/brand/logo-silver.svg" className="underline underline-offset-2 hover:text-white">logo-silver.svg</a>
                   </p>
                 </div>
-                <div className="flex items-center gap-6 rounded-3xl border border-c4-grey/40 bg-white p-8">
+                <div className="flex items-center gap-6  border border-c4-grey/40 bg-white p-8">
                   <IconNavy className="h-20 w-auto" />
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-c4-ink/60">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-c4-ink/70">
                       Bowl mark, standalone
                     </p>
-                    <p className="mt-1 text-xs text-c4-ink/50">
+                    <p className="mt-1 text-xs text-c4-ink/70">
                       <a href="/brand/icon-navy.svg" className="underline underline-offset-2 hover:text-c4-navy">icon-navy.svg</a>
                       {" / "}
                       <a href="/brand/icon-knockout.svg" className="underline underline-offset-2 hover:text-c4-navy">icon-knockout.svg</a>
                     </p>
                   </div>
                 </div>
-                <div className="rounded-3xl border border-c4-grey/40 bg-white p-8">
+                <div className=" border border-c4-grey/40 bg-white p-8">
                   <p className="display text-lg text-c4-navy">Poppins</p>
-                  <p className="mt-1 text-xs text-c4-ink/60">
+                  <p className="mt-1 text-xs text-c4-ink/70">
                     Display and body. Weights 400 to 800, loaded with font-display: swap.
                   </p>
                   <p className="display mt-4 text-3xl text-c4-navy">Aa 0123 N$</p>
@@ -128,11 +122,11 @@ export default function BrandPage() {
               </h2>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {PALETTE.map((c) => (
-                  <div key={c.name} className="flex overflow-hidden rounded-2xl border border-c4-grey/40 bg-white">
+                  <div key={c.name} className="flex overflow-hidden  border border-c4-grey/40 bg-white">
                     <div className="w-20 shrink-0" style={{ background: c.hex }} aria-hidden="true" />
                     <div className="min-w-0 p-4">
                       <p className="text-sm font-bold text-c4-navy">
-                        {c.name} <span className="price-row ml-1 font-mono text-xs font-medium text-c4-ink/50">{c.hex}</span>
+                        {c.name} <span className="price-row ml-1 font-mono text-xs font-medium text-c4-ink/70">{c.hex}</span>
                       </p>
                       <p className="mt-1 text-xs leading-relaxed text-c4-ink/65">{c.note}</p>
                     </div>
@@ -148,20 +142,20 @@ export default function BrandPage() {
               <h2 id="type" className="display text-2xl text-c4-navy">
                 Typography hierarchy
               </h2>
-              <div className="mt-6 space-y-5 rounded-3xl border border-c4-grey/40 bg-white p-6 sm:p-8">
+              <div className="mt-6 space-y-5  border border-c4-grey/40 bg-white p-6 sm:p-8">
                 <div>
                   <p className="display text-3xl text-c4-navy sm:text-4xl">Display, Poppins Bold</p>
-                  <p className="mt-1 text-xs text-c4-ink/50">Headlines. Weight 700, tight tracking, 1.04 line height.</p>
+                  <p className="mt-1 text-xs text-c4-ink/70">Headlines. Weight 700, tight tracking, 1.04 line height.</p>
                 </div>
                 <div className="border-t border-c4-grey/40 pt-5">
                   <p className="text-base font-semibold text-c4-ink">Section subheads, Poppins SemiBold</p>
-                  <p className="mt-1 text-xs text-c4-ink/50">Weight 600.</p>
+                  <p className="mt-1 text-xs text-c4-ink/70">Weight 600.</p>
                 </div>
                 <div className="border-t border-c4-grey/40 pt-5">
                   <p className="text-sm leading-relaxed text-c4-ink/80">
                     Body copy, Poppins Regular. Short lines, plain words, prices with tabular numerals so columns of N$ amounts line up.
                   </p>
-                  <p className="mt-1 text-xs text-c4-ink/50">Weight 400, 1.6 to 1.7 line height.</p>
+                  <p className="mt-1 text-xs text-c4-ink/70">Weight 400, 1.6 to 1.7 line height.</p>
                 </div>
               </div>
             </section>

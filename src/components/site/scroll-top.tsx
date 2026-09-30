@@ -19,8 +19,8 @@ export function ScrollTop() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const R = 20;
-  const C = 2 * Math.PI * R;
+  const S = 40; // square ring side, inside the 48px button
+  const P = 4 * S; // square perimeter
 
   return (
     <button
@@ -31,18 +31,20 @@ export function ScrollTop() {
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
       }`}
     >
-      <svg viewBox="0 0 48 48" className="absolute inset-0 h-12 w-12 -rotate-90" aria-hidden="true">
-        <circle cx="24" cy="24" r={R} fill="none" stroke="#e3e1dc" strokeWidth="3" />
-        <circle
-          cx="24"
-          cy="24"
-          r={R}
+      {/* Square progress ring: reads the owner's square-corner instruction */}
+      <svg viewBox="0 0 48 48" className="absolute inset-0 h-12 w-12" aria-hidden="true">
+        <rect x="4" y="4" width={S} height={S} fill="none" stroke="#e3e1dc" strokeWidth="3" />
+        <rect
+          x="4"
+          y="4"
+          width={S}
+          height={S}
           fill="none"
           stroke="#223a6c"
           strokeWidth="3"
-          strokeLinecap="round"
-          strokeDasharray={C}
-          strokeDashoffset={C * (1 - progress)}
+          pathLength={P}
+          strokeDasharray={P}
+          strokeDashoffset={P * (1 - progress)}
           className="ring-progress"
         />
       </svg>

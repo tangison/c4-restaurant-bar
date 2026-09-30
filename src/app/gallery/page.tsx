@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/site/nav";
+import { PageHead } from "@/components/site/page-head";
 import { Gallery } from "@/components/site/gallery";
 import { Footer } from "@/components/site/footer";
 
@@ -14,7 +15,11 @@ export default function GalleryPage() {
   return (
     <>
       <Nav />
-      <main className="pt-20">
+      <main>
+        <PageHead
+          title="From the pass"
+          line="Straight from our kitchen and the patio: the platters, the boxes and the plates that keep the corner busy."
+        />
         <Gallery />
       </main>
       <Footer />

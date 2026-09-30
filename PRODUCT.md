@@ -20,14 +20,16 @@ A Swakopmund restaurant and bar where the fire (braai and grill) and the bar are
 
 ## Operating Context
 
-Namibia. Currency N$ (Namibian dollar). Phone format +264. WhatsApp is the dominant messaging channel for this market. Many users browse on 3G or capped data, so the site must stay under a 500KB page-transfer budget. The business contact facts come from the owner (Mr BK) and must never drift: P.O. Box 91466 Klein Windhoek, email c4restaurantbar@gmail.com, tel 083 783 7780 and 081 400 6471, physical corner of Aaron Edward and Kovambo Nujoma Street, Swakopmund.
+Namibia. Currency N$ (Namibian dollar). Phone format +264. WhatsApp is the dominant messaging channel for this market. Many users browse on 3G or capped data, so the site must stay under a 500KB page-transfer budget. The business contact facts come from the owner (Mr BK) and must never drift: P.O. Box 91466 Klein Windhoek, email info@c4restaurant.com (a sales@ mailbox also exists but is not published on the site), tel 083 783 7780 (landline) and 081 400 6471 (mobile and WhatsApp line), physical corner of Aaron Edward and Kovambo Nujoma Street, Swakopmund. Live production domain: https://www.c4restaurant.com (apex 308-redirects to www).
 
 ## Capabilities and Constraints
 
-- Single-page site build: one user-visible route (hero, about, bar, menu, gallery, FAQ, contact, footer), per the delivery environment's build mode. Error and SEO files are infrastructure, not pages.
-- WhatsApp ordering widgets: floating WhatsApp button, per-menu-item order links, and a section-level order CTA that pre-fills the message. ASSUMPTION: the primary WhatsApp number is 083 783 7780; the code keeps this in one constant so the owner can swap it in seconds if 081 400 6471 is the WhatsApp line.
+- Multi-page site build, owner instruction (2026-09-30): routes /, /menu, /bar, /gallery, /visit, plus /brand, /terms, /privacy-policy and branded 404 and error screens. Every route opens on a navy page head so the floating navigation blends in with no paper margin.
+- WhatsApp ordering widgets: floating order-and-book dock, per-menu-item order links, and section-level CTAs that pre-fill the message. RESOLVED (owner, 2026-09-25): WhatsApp is 081 400 6471; 083 783 7780 is the landline.
 - Menu prices are market-related estimates researched from Swakopmund dining prices, labelled internally as assumption until the owner confirms; the full menu lives in one data file for easy edits.
 - No online payments, no accounts, no newsletter backend. No fabricated testimonials, ratings, awards, or press. ASSUMPTION: opening hours; to be confirmed by the owner before sign-off.
+- Square corners everywhere, owner instruction (2026-09-30): no rounded corners on any element, including buttons, cards, chips, images and the scroll-top ring.
+- No 3D rendered icons and no image captions on the site, owner instruction (2026-09-30): glossy 3D icons read as AI slop and were retired from the menu tabs.
 - Search-friendly local SEO: Restaurant structured data, NAP consistency, click-to-call links.
 
 ## Brand Commitments
@@ -43,9 +45,9 @@ Namibia. Currency N$ (Namibian dollar). Phone format +264. WhatsApp is the domin
 
 - 29 real premises and food photos in scripts/assets-download/C4-Complete-Package/Photos/ (Exteriors-Patio 9, Food-Starters-Salads 5, Food-Braai-Grill 7, Food-Mains-Takeaway 8), web-ready JPGs with no baked-in text or prices.
 - Brand kit: logos (light, dark, icon-only at multiple sizes), full favicon set with site.webmanifest, brand palette sheet.
-- Seven 3D rendered icons for menu headers and dividers (coffee, beer, cutlery, flame grill, chef hat, umbrella, cloche).
+- Seven 3D rendered icons were supplied but retired from the site per the owner's no-AI-slop instruction (2026-09-30).
 - Owner-supplied contact and address facts (see Operating Context).
-- Absences that must not be fabricated: customer testimonials, Google rating or review counts, awards, press mentions, exact opening hours, registration number, and which phone line is WhatsApp.
+- Absences that must not be fabricated: customer testimonials, Google rating or review counts, awards, press mentions, exact opening hours, and registration number.
 
 ## Product Principles
 

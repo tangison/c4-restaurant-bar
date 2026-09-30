@@ -46,7 +46,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-c4-grey/70 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-c4-grey/80 sm:flex-row sm:items-center sm:justify-between">
           <p>© {year} {SITE.legalName}. All rights reserved. This site stores no personal information; WhatsApp and map links open services with their own privacy policies.</p>
           <p className="shrink-0">
             Made by{" "}

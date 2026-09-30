@@ -93,14 +93,14 @@ export function Nav() {
                 href={waLink(ORDER_MSG)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-c4-navy transition-colors hover:bg-c4-grey sm:inline-flex"
+                className="hidden items-center gap-2  bg-white px-4 py-2 text-sm font-semibold text-c4-navy transition-colors hover:bg-c4-grey sm:inline-flex"
               >
                 <WhatsAppGlyph className="h-4 w-4" />
                 Order
               </a>
               <a
                 href={`tel:${SITE.phoneLandlineIntl}`}
-                className="hidden rounded-full border border-white/30 px-4 py-2 text-sm font-medium text-white transition-colors hover:border-white lg:inline-flex"
+                className="hidden  border border-white/30 px-4 py-2 text-sm font-medium text-white transition-colors hover:border-white lg:inline-flex"
               >
                 {SITE.phoneLandline}
               </a>
@@ -188,7 +188,7 @@ export function Nav() {
               href={waLink(ORDER_MSG)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-4 py-3 text-sm font-semibold text-c4-navy transition-colors hover:bg-c4-grey"
+              className="inline-flex w-full items-center justify-center gap-2  bg-white px-4 py-3 text-sm font-semibold text-c4-navy transition-colors hover:bg-c4-grey"
             >
               <WhatsAppGlyph className="h-4 w-4" />
               Order on WhatsApp

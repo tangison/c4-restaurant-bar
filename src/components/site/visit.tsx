@@ -19,12 +19,8 @@ export function Visit() {
         <div>
           <Reveal>
             <h2 id="visit-heading" className="display text-3xl text-c4-navy sm:text-4xl">
-              Find the corner
+              Address and hours
             </h2>
-            <p className="mt-4 max-w-prose leading-relaxed text-c4-ink/75">
-              Look for the blue fence and the umbrellas on the corner of Aaron
-              Edward and Kovambo Nujoma Street. Parking on the sand in front.
-            </p>
           </Reveal>
 
           <Reveal delay={1}>
@@ -82,7 +78,7 @@ export function Visit() {
                 href={waLink(ORDER_MSG)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 rounded-full bg-c4-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-c4-navy-deep"
+                className="inline-flex items-center gap-2.5  bg-c4-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-c4-navy-deep"
               >
                 <WhatsAppGlyph className="h-4 w-4" />
                 WhatsApp us
@@ -91,7 +87,7 @@ export function Visit() {
                 href={DIRECTIONS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full border border-c4-navy/30 px-6 py-3 text-sm font-semibold text-c4-navy transition-colors hover:border-c4-navy"
+                className="inline-flex items-center  border border-c4-navy/30 px-6 py-3 text-sm font-semibold text-c4-navy transition-colors hover:border-c4-navy"
               >
                 Open directions in Google Maps
               </a>
@@ -100,7 +96,7 @@ export function Visit() {
         </div>
 
         <Reveal delay={1} className="lg:self-start">
-          <div className="overflow-hidden rounded-2xl border border-c4-grey/40 bg-white">
+          <div className="overflow-hidden  border border-c4-grey/40 bg-white">
             <iframe
               src={MAP_SRC}
               title="Map to C4 Restaurant & Bar on the corner of Aaron Edward and Kovambo Nujoma Street, Swakopmund"
@@ -109,9 +105,6 @@ export function Visit() {
               className="h-80 w-full border-0 sm:h-[26rem]"
               allowFullScreen
             />
-            <p className="border-t border-c4-grey/40 px-5 py-3 text-xs text-c4-ink/60">
-              Corner of Aaron Edward and Kovambo Nujoma Street, {SITE.locality}. Map opens on Google.
-            </p>
           </div>
         </Reveal>
       </div>

@@ -26,7 +26,7 @@ export function Faq() {
               href={waLink(BOOK_MSG)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-full bg-c4-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-c4-navy-deep"
+              className="inline-flex items-center gap-2.5  bg-c4-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-c4-navy-deep"
             >
               <WhatsAppGlyph className="h-4 w-4" />
               Book a table
@@ -41,7 +41,7 @@ export function Faq() {
               return (
                 <li
                   key={f.q}
-                  className={`rounded-xl border transition-colors duration-300 ${
+                  className={` border transition-colors duration-300 ${
                     isOpen ? "border-c4-grey/40 bg-c4-paper" : "border-transparent bg-transparent"
                   }`}
                 >
@@ -59,8 +59,8 @@ export function Faq() {
                         isOpen ? "rotate-45" : ""
                       }`}
                     >
-                      <span className="absolute left-0 top-1/2 h-0.5 w-5 -translate-y-1/2 rounded-full bg-current" />
-                      <span className="absolute left-1/2 top-0 h-5 w-0.5 -translate-x-1/2 rounded-full bg-current" />
+                      <span className="absolute left-0 top-1/2 h-0.5 w-5 -translate-y-1/2  bg-current" />
+                      <span className="absolute left-1/2 top-0 h-5 w-0.5 -translate-x-1/2  bg-current" />
                     </span>
                   </button>
                   <div

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/site/nav";
+import { PageHead } from "@/components/site/page-head";
 import { Bar } from "@/components/site/bar";
 import { Footer } from "@/components/site/footer";
+import { BAR } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "The Bar: Draught, Wine & Cocktails in Swakopmund",
@@ -14,7 +16,8 @@ export default function BarPage() {
   return (
     <>
       <Nav />
-      <main className="pt-20">
+      <main>
+        <PageHead title={BAR.headline} line={BAR.copy} />
         <Bar />
       </main>
       <Footer />

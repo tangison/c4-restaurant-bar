@@ -12,7 +12,7 @@ export const TERMS: LegalSection[] = [
     title: "Who we are",
     body: [
       "This website belongs to C4 Restaurant & Bar CC, a close corporation trading as C4 Restaurant & Bar on the corner of Aaron Edward and Kovambo Nujoma Street, Swakopmund, Erongo Region, Namibia. Postal address: P.O. Box 91466, Klein Windhoek, Windhoek.",
-      "You can reach us on 083 783 7780 or 081 400 6471, or by email at c4restaurantbar@gmail.com. When we say \u201cwe\u201d, \u201cus\u201d or \u201cthe restaurant\u201d in these terms, we mean C4 Restaurant & Bar CC.",
+      "You can reach us on 083 783 7780 or 081 400 6471, or by email at info@c4restaurant.com. When we say \u201cwe\u201d, \u201cus\u201d or \u201cthe restaurant\u201d in these terms, we mean C4 Restaurant & Bar CC.",
     ],
   },
   {
@@ -124,7 +124,7 @@ export const PRIVACY: LegalSection[] = [
   {
     title: "Your choices",
     body: [
-      "You can ask us at any time what message history we hold for your number, ask us to delete it, or correct anything wrong in it. Send the request to c4restaurantbar@gmail.com or raise it on WhatsApp and we will sort it out.",
+      "You can ask us at any time what message history we hold for your number, ask us to delete it, or correct anything wrong in it. Send the request to info@c4restaurant.com or raise it on WhatsApp and we will sort it out.",
     ],
   },
   {

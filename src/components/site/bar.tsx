@@ -5,10 +5,10 @@ import { Reveal } from "./reveal";
 
 export function Bar() {
   return (
-    <section id="bar" aria-labelledby="bar-heading" className="scroll-mt-16 bg-c4-navy py-20 sm:py-24">
+    <section id="bar" aria-label="Drinks at the C4 bar" className="bg-c4-navy pb-20 pt-2 sm:pb-24">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-16">
         <Reveal className="order-2 lg:order-1">
-          <div className="overflow-hidden rounded-2xl border border-white/15">
+          <div className="overflow-hidden border border-white/15">
             <Image
               src={BAR.photo}
               alt="A cold Hansa draught poured at the C4 bar"
@@ -22,17 +22,7 @@ export function Bar() {
 
         <div className="order-1 lg:order-2">
           <Reveal>
-            <h2 id="bar-heading" className="display text-3xl text-white sm:text-4xl">
-              {BAR.headline}
-            </h2>
-          </Reveal>
-          <Reveal delay={1}>
-            <p className="mt-5 max-w-prose leading-relaxed text-c4-grey">
-              {BAR.copy}
-            </p>
-          </Reveal>
-          <Reveal delay={2}>
-            <ul className="price-row mt-8 divide-y divide-white/10 border-y border-white/15">
+            <ul className="price-row divide-y divide-white/10 border-y border-white/15">
               {BAR.drinks.map((d) => (
                 <li key={d.name} className="flex items-baseline py-3">
                   <span className="text-sm font-semibold text-white">{d.name}</span>
@@ -46,12 +36,12 @@ export function Bar() {
               href={waLink(ORDER_MSG)}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-7 inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3 text-sm font-semibold text-c4-navy transition-colors hover:bg-c4-grey"
+              className="mt-7 inline-flex items-center gap-2.5 bg-white px-6 py-3 text-sm font-semibold text-c4-navy transition-colors hover:bg-c4-grey"
             >
               <WhatsAppGlyph className="h-4 w-4" />
               Ask what is pouring today
             </a>
-            <p className="mt-3 text-xs text-c4-grey/70">
+            <p className="mt-3 text-xs text-c4-grey">
               Drink prices are market-related and can move with the suppliers.
             </p>
           </Reveal>

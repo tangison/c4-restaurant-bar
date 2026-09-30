@@ -34,9 +34,10 @@ export function Hero() {
 
   return (
     <section id="top" aria-label="Welcome to C4 Restaurant and Bar" className="relative">
-      <div className="grid lg:min-h-[calc(100svh-6rem)] lg:grid-cols-[45%_55%]">
-        {/* Navy field */}
-        <div className="flex flex-col justify-center bg-c4-navy px-5 pb-10 pt-8 sm:px-8 lg:pb-14 lg:pt-16">
+      <div className="grid lg:min-h-[calc(100svh-3.75rem)] lg:grid-cols-[45%_55%]">
+        {/* Navy field: starts at the very top of the page so the fixed
+            floating nav blends into it (owner instruction, no white margin). */}
+        <div className="flex flex-col justify-center bg-c4-navy px-5 pb-10 pt-28 sm:px-8 lg:pb-14 lg:pt-32">
           <div className="mx-auto w-full max-w-xl">
             <h1 className="display text-4xl text-white sm:text-5xl lg:text-[3.4rem]">
               The braai corner <br className="hidden lg:block" />
@@ -52,14 +53,14 @@ export function Hero() {
                 href={waLink(ORDER_MSG)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3.5 text-base font-semibold text-c4-navy transition-colors hover:bg-c4-grey"
+                className="inline-flex items-center gap-2.5  bg-white px-6 py-3.5 text-base font-semibold text-c4-navy transition-colors hover:bg-c4-grey"
               >
                 <WhatsAppGlyph className="h-5 w-5" />
                 Order on WhatsApp
               </a>
               <a
                 href="/menu"
-                className="inline-flex items-center rounded-full border border-white/40 px-6 py-3.5 text-base font-medium text-white transition-colors hover:border-white"
+                className="inline-flex items-center  border border-white/40 px-6 py-3.5 text-base font-medium text-white transition-colors hover:border-white"
               >
                 See the menu
               </a>
@@ -113,7 +114,7 @@ export function Hero() {
                 onClick={() => go(i)}
                 aria-label={`Show slide ${i + 1} of ${HERO_SLIDES.length}`}
                 aria-current={i === index}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
+                className={`h-2.5  transition-all duration-300 ${
                   i === index ? "w-7 bg-white" : "w-2.5 bg-white/50 hover:bg-white/80"
                 }`}
               />

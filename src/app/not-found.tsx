@@ -16,7 +16,7 @@ export default function NotFound() {
       <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
         <Link
           href="/"
-          className="inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-c4-navy transition-colors hover:bg-c4-grey"
+          className="inline-flex items-center  bg-white px-6 py-3 text-sm font-semibold text-c4-navy transition-colors hover:bg-c4-grey"
         >
           Back to the corner
         </Link>
@@ -24,7 +24,7 @@ export default function NotFound() {
           href={waLink(ORDER_MSG)}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-medium text-white transition-colors hover:border-white"
+          className="inline-flex items-center gap-2  border border-white/40 px-6 py-3 text-sm font-medium text-white transition-colors hover:border-white"
         >
           <WhatsAppGlyph className="h-4 w-4" />
           WhatsApp {SITE.whatsappDisplay}

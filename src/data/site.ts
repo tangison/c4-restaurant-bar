@@ -6,10 +6,13 @@ export const SITE = {
   name: "C4 Restaurant & Bar",
   legalName: "C4 Restaurant & Bar CC",
   tagline: "The braai corner of Swakopmund",
-  // Production URL confirmed live at deploy (2026-09-25)
-  url: "https://c4-restaurant-bar.vercel.app",
-  // Owner-supplied contact facts (confirmed by owner, 2026-09-25):
+  // Live production domain (owner confirmed, 2026-09-30; apex 308-redirects
+  // to www, so www is the canonical host).
+  url: "https://www.c4restaurant.com",
+  // Owner-supplied contact facts (confirmed by owner, 2026-09-25 and 09-30):
   // 083 is the landline, 081 is the mobile and the WhatsApp line.
+  // Mailbox facts (owner, 2026-09-30): info@ and sales@ both exist at the
+  // live domain; only info@ is published on the site.
   phoneLandline: "083 783 7780",
   phoneLandlineIntl: "+264837837780",
   phoneMobile: "081 400 6471",
@@ -21,7 +24,7 @@ export const SITE = {
   phoneSecondaryIntl: "+264814006471",
   whatsapp: "264814006471",
   whatsappDisplay: "081 400 6471",
-  email: "c4restaurantbar@gmail.com",
+  email: "info@c4restaurant.com",
   streetAddress: "Corner of Aaron Edward and Kovambo Nujoma Street",
   locality: "Swakopmund",
   region: "Erongo Region",
@@ -112,9 +115,7 @@ export type MenuItem = {
 export type MenuGroup = {
   id: string;
   label: string;
-  icon: string; // 3D icon file in /icons3d
   photo: string;
-  note: string;
   items: MenuItem[];
 };
 
@@ -125,9 +126,7 @@ export const MENU: MenuGroup[] = [
   {
     id: "starters",
     label: "Starters & salads",
-    icon: "cutlery",
     photo: "/photos/menu-starters.webp",
-    note: "Made in our kitchen, cooked to order.",
     items: [
       { name: "Golden calamari strips", desc: "Tender calamari, light fried, tartar dip and lemon.", price: 85 },
       { name: "Chicken wings (6)", desc: "Grilled or crispy, chakalaka or BBQ dip.", price: 80 },
@@ -140,9 +139,7 @@ export const MENU: MenuGroup[] = [
   {
     id: "braai",
     label: "From the braai",
-    icon: "flame-grill",
     photo: "/photos/menu-braai.webp",
-    note: "Over the coals, the way Swakopmund likes it.",
     items: [
       { name: "Boerewors & pap", desc: "Coiled wors off the grill, pap and chakalaka.", price: 95, tag: "House favourite" },
       { name: "Braai platter for two", desc: "Wors, lamb chops, ribs, pap and two salads. Built to share.", price: 290, tag: "To share" },
@@ -156,9 +153,7 @@ export const MENU: MenuGroup[] = [
   {
     id: "mains",
     label: "Mains & stews",
-    icon: "cloche-plate",
     photo: "/photos/menu-mains.webp",
-    note: "Plated meals, home-style portions.",
     items: [
       { name: "Oxtail stew", desc: "Slow-cooked till the spoon bends, rice or pap.", price: 150, tag: "House favourite" },
       { name: "Beef stew & rice", desc: "Carrot and potato in the pot, the old way.", price: 115 },
@@ -173,9 +168,7 @@ export const MENU: MenuGroup[] = [
   {
     id: "takeaway",
     label: "Takeaway & breakfast",
-    icon: "coffee-cup",
     photo: "/photos/menu-takeaway.webp",
-    note: "Order on WhatsApp, collect at the counter.",
     items: [
       { name: "Breakfast box", desc: "Eggs, wors, bacon, beans, tomato and bread. From 11:00 too.", price: 85 },
       { name: "Mince omelette", desc: "Three eggs, savoury mince, spinach on the side.", price: 75 },

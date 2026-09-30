@@ -1,6 +1,6 @@
 ---
 name: "C4 Restaurant & Bar"
-description: "Single-page site for a Swakopmund braai-and-bar corner venue: whole navy color fields, honest photography, and WhatsApp-first actions."
+description: "Multi-page site for a Swakopmund braai-and-bar corner venue: whole navy color fields, honest photography, square corners, and WhatsApp-first actions."
 colors:
   c4-navy: "#223a6c"
   c4-navy-deep: "#1a2e57"
@@ -43,11 +43,11 @@ typography:
     fontWeight: 600
     letterSpacing: "0.025em"
 rounded:
-  sm: "8px"
-  md: "10px"
-  lg: "12px"
-  xl: "16px"
-  full: "9999px"
+  sm: "0px"
+  md: "0px"
+  lg: "0px"
+  xl: "0px"
+  full: "0px (owner instruction 2026-09-30: square corners everywhere, no exceptions)"
 spacing:
   gutter: "1.25rem (1.5rem at sm)"
   section-y: "5rem (6rem at sm)"
@@ -123,8 +123,8 @@ Confirmed rejections, held in the code by construction: no gradient text, no gla
 **Key Characteristics:**
 - Whole-section color fields: navy bookends and one navy band (bar), warm paper and white food sections.
 - One type family, Poppins (400 to 800); display lines at 700 with -0.03em tracking and 1.04 line-height.
-- A pill silhouette everywhere: buttons, menu tabs, tag chips, slider dots, icon buttons, the floating WhatsApp button (9999px radius).
-- Photos in 16px-radius overflow-hidden frames with 1px hairlines (grey at 40 percent on light, white at 15 percent on navy).
+- A square silhouette everywhere, owner instruction (2026-09-30): buttons, menu tabs, tag chips, slider dots, icon buttons, photo frames and the floating order-and-book button are sharp rectangles with zero border-radius.
+- Photos in square overflow-hidden frames with 1px hairlines (grey at 40 percent on light, white at 15 percent on navy).
 - Menu prices set with dotted leaders and tabular numerals.
 - One scroll-reveal system and one hero crossfade with slow zoom; prefers-reduced-motion disables both.
 - WhatsApp green reserved for the floating button alone.
@@ -177,11 +177,11 @@ The palette is a three-part brand kit (navy, grey, signal blue) extended with wa
 
 ## Layout
 
-One user-visible page: fixed navy header (64px tall), hero, facts strip, story, menu, bar, gallery, FAQ, visit, footer, plus a floating WhatsApp button that enters after 900ms. Content lives in a 72rem (1152px) max-width container with 20px side padding (24px at sm). Sections breathe 80px vertically (96px at sm), and split grids gap 48px (64px at lg). Anchored sections carry a 4rem scroll margin to clear the fixed header.
+Multi-page build. Every route opens on a navy page head band (overline, one h1, one grey line) so the fixed floating navigation blends into brand navy with no paper margin. Home: hero runs to the very top so the navy field sits under the floating nav, then facts strip, story, deep-navy route band, footer. Sub-routes: /menu (tabs and plate list), /bar (photo and price list under its head), /gallery (full-bleed rail), /visit (FAQ then map and details), /brand, /terms, /privacy-policy. Content lives in a 72rem (1152px) max-width container with 20px side padding (24px at sm). Sections breathe 80px vertically (96px at sm), and split grids gap 48px (64px at lg). Anchored sections carry a 4rem scroll margin to clear the fixed header.
 
-The hero is a two-column split at lg: 45 percent navy panel (reversed logo lockup, headline, grey sub-line, white WhatsApp pill, outline menu link, call links) against 55 percent photo running to the section bottom with a minimum height of calc(100svh - 4rem). On mobile the navy panel stacks above a 288px tall photo (384px at sm). A deep-navy facts strip closes the section with address, hours, and a WhatsApp link separated by middots.
+The hero is a two-column split at lg: 45 percent navy panel (headline, grey sub-line, white WhatsApp button, outline menu link, call links) against 55 percent photo running to the section bottom with a minimum height of calc(100svh - 3.75rem). On mobile the navy panel stacks above a 288px tall photo (384px at sm). A deep-navy facts strip closes the section with address, hours, and a WhatsApp link separated by middots. The hero starts at the top of the viewport: no top padding on main, the fixed floating nav sits over the navy field and photo.
 
-The menu panel splits 38 percent sticky photo column (sticky at 6rem below the header) against the plate list. FAQ splits a 34 percent intro column against the accordion. The gallery breaks the container: a full-bleed horizontal rail with scroll snap, 256px cards (288px at sm), hidden scrollbars, and a 2rem edge fade mask at lg. The page alternates fields for rhythm: deep navy strip, paper story, white menu, navy bar, paper gallery, white FAQ, paper visit, deep navy footer. Breakpoints are the Tailwind defaults the build actually uses: sm 640px (gutters and type step up), md 768px (nav collapses to an accordion menu), lg 1024px (all splits engage).
+The menu panel splits 38 percent sticky photo column (sticky at 6rem below the header) against the plate list; the section h2 is screen-reader only because the page head carries the h1. FAQ splits a 34 percent intro column against the accordion. The gallery breaks the container: a full-bleed horizontal rail with scroll snap, 256px cards (288px at sm), hidden scrollbars, and a 2rem edge fade mask at lg. Sub-pages alternate fields for rhythm: navy page head, then paper or white sections, deep navy footer. Breakpoints are the Tailwind defaults the build actually uses: sm 640px (gutters and type step up), md 768px (nav collapses to an offcanvas drawer), lg 1024px (all splits engage).
 
 ## Elevation & Depth
 

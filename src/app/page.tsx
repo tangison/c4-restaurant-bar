@@ -11,12 +11,14 @@ export default function Home() {
     <>
       <a
         href="/menu"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-c4-navy focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50  focus:bg-c4-navy focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
       >
         Skip to the menu
       </a>
       <Nav />
-      <main className="pt-20">
+      {/* No top padding: the hero navy field runs under the floating nav so
+          it blends in with no white margin. */}
+      <main>
         <Hero />
         <Story />
         {/* Short route band: the least words possible, the fastest taps. */}
@@ -34,7 +36,7 @@ export default function Home() {
               <div className="flex flex-wrap items-center gap-3">
                 <Link
                   href="/menu"
-                  className="inline-flex items-center rounded-full bg-white px-6 py-3.5 text-base font-semibold text-c4-navy transition-colors hover:bg-c4-grey"
+                  className="inline-flex items-center  bg-white px-6 py-3.5 text-base font-semibold text-c4-navy transition-colors hover:bg-c4-grey"
                 >
                   See the menu
                 </Link>
@@ -42,7 +44,7 @@ export default function Home() {
                   href={waLink(ORDER_MSG)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 rounded-full border border-white/40 px-6 py-3.5 text-base font-medium text-white transition-colors hover:border-white"
+                  className="inline-flex items-center gap-2.5  border border-white/40 px-6 py-3.5 text-base font-medium text-white transition-colors hover:border-white"
                 >
                   <WhatsAppGlyph className="h-5 w-5" />
                   Order on WhatsApp
